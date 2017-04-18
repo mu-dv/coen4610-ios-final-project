@@ -1,0 +1,308 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D93C115F1E944376002C8556 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93C115E1E944376002C8556 /* AppDelegate.swift */; };
+		D93C11611E944376002C8556 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93C11601E944376002C8556 /* LaunchScreenViewController.swift */; };
+		D93C11641E944376002C8556 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D93C11621E944376002C8556 /* Main.storyboard */; };
+		D93C11661E944376002C8556 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D93C11651E944376002C8556 /* Assets.xcassets */; };
+		D93C116E1E944710002C8556 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93C116D1E944710002C8556 /* AboutViewController.swift */; };
+		D9B361031E96E60B00A0C909 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B361021E96E60B00A0C909 /* GameViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D93C115B1E944376002C8556 /* AstroidsMarquette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstroidsMarquette.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D93C115E1E944376002C8556 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D93C11601E944376002C8556 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		D93C11631E944376002C8556 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D93C11651E944376002C8556 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D93C11671E944376002C8556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D93C116D1E944710002C8556 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		D9B361021E96E60B00A0C909 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D93C11581E944376002C8556 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D93C11521E944376002C8556 = {
+			isa = PBXGroup;
+			children = (
+				D93C115D1E944376002C8556 /* AstroidsMarquette */,
+				D93C115C1E944376002C8556 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D93C115C1E944376002C8556 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D93C115B1E944376002C8556 /* AstroidsMarquette.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D93C115D1E944376002C8556 /* AstroidsMarquette */ = {
+			isa = PBXGroup;
+			children = (
+				D93C115E1E944376002C8556 /* AppDelegate.swift */,
+				D93C11601E944376002C8556 /* LaunchScreenViewController.swift */,
+				D93C11621E944376002C8556 /* Main.storyboard */,
+				D9B361021E96E60B00A0C909 /* GameViewController.swift */,
+				D93C116D1E944710002C8556 /* AboutViewController.swift */,
+				D93C11651E944376002C8556 /* Assets.xcassets */,
+				D93C11671E944376002C8556 /* Info.plist */,
+			);
+			path = AstroidsMarquette;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D93C115A1E944376002C8556 /* AstroidsMarquette */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D93C116A1E944376002C8556 /* Build configuration list for PBXNativeTarget "AstroidsMarquette" */;
+			buildPhases = (
+				D93C11571E944376002C8556 /* Sources */,
+				D93C11581E944376002C8556 /* Frameworks */,
+				D93C11591E944376002C8556 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AstroidsMarquette;
+			productName = AstroidsMarquette;
+			productReference = D93C115B1E944376002C8556 /* AstroidsMarquette.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D93C11531E944376002C8556 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = austinandersonphoto;
+				TargetAttributes = {
+					D93C115A1E944376002C8556 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = AGBC5D2T97;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = D93C11561E944376002C8556 /* Build configuration list for PBXProject "AstroidsMarquette" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D93C11521E944376002C8556;
+			productRefGroup = D93C115C1E944376002C8556 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D93C115A1E944376002C8556 /* AstroidsMarquette */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D93C11591E944376002C8556 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D93C11661E944376002C8556 /* Assets.xcassets in Resources */,
+				D93C11641E944376002C8556 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D93C11571E944376002C8556 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9B361031E96E60B00A0C909 /* GameViewController.swift in Sources */,
+				D93C116E1E944710002C8556 /* AboutViewController.swift in Sources */,
+				D93C11611E944376002C8556 /* LaunchScreenViewController.swift in Sources */,
+				D93C115F1E944376002C8556 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D93C11621E944376002C8556 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D93C11631E944376002C8556 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D93C11681E944376002C8556 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = appletvos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Debug;
+		};
+		D93C11691E944376002C8556 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = appletvos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D93C116B1E944376002C8556 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = AGBC5D2T97;
+				INFOPLIST_FILE = AstroidsMarquette/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.austinandersonphoto.AstroidsMarquette;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		D93C116C1E944376002C8556 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = AGBC5D2T97;
+				INFOPLIST_FILE = AstroidsMarquette/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.austinandersonphoto.AstroidsMarquette;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D93C11561E944376002C8556 /* Build configuration list for PBXProject "AstroidsMarquette" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D93C11681E944376002C8556 /* Debug */,
+				D93C11691E944376002C8556 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D93C116A1E944376002C8556 /* Build configuration list for PBXNativeTarget "AstroidsMarquette" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D93C116B1E944376002C8556 /* Debug */,
+				D93C116C1E944376002C8556 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D93C11531E944376002C8556 /* Project object */;
+}
