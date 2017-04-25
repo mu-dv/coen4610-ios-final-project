@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D92C89351EB007CD002FFE51 /* RemoteControllerActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92C89341EB007CD002FFE51 /* RemoteControllerActions.swift */; };
 		D93C115F1E944376002C8556 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93C115E1E944376002C8556 /* AppDelegate.swift */; };
 		D93C11611E944376002C8556 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93C11601E944376002C8556 /* LaunchScreenViewController.swift */; };
 		D93C11641E944376002C8556 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D93C11621E944376002C8556 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D92C89341EB007CD002FFE51 /* RemoteControllerActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteControllerActions.swift; sourceTree = "<group>"; };
 		D93C115B1E944376002C8556 /* AstroidsMarquette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstroidsMarquette.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D93C115E1E944376002C8556 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D93C11601E944376002C8556 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				D93C11601E944376002C8556 /* LaunchScreenViewController.swift */,
 				D93C11621E944376002C8556 /* Main.storyboard */,
 				D9FD92261EAFF80700C4CB0E /* MainMenuViewController.swift */,
+				D92C89341EB007CD002FFE51 /* RemoteControllerActions.swift */,
 				D9B361021E96E60B00A0C909 /* GameViewController.swift */,
 				D93C116D1E944710002C8556 /* AboutViewController.swift */,
 				D93C11651E944376002C8556 /* Assets.xcassets */,
@@ -145,6 +148,7 @@
 				D9B361031E96E60B00A0C909 /* GameViewController.swift in Sources */,
 				D9FD92271EAFF80700C4CB0E /* MainMenuViewController.swift in Sources */,
 				D93C116E1E944710002C8556 /* AboutViewController.swift in Sources */,
+				D92C89351EB007CD002FFE51 /* RemoteControllerActions.swift in Sources */,
 				D93C11611E944376002C8556 /* LaunchScreenViewController.swift in Sources */,
 				D93C115F1E944376002C8556 /* AppDelegate.swift in Sources */,
 			);

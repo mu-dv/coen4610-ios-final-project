@@ -9,21 +9,42 @@
 import UIKit
 import MultipeerConnectivity
 
-class ViewController: UIViewController, MCSessionDelegate, MCBrowserViewControllerDelegate {
+class RemoteViewController: UIViewController, MCSessionDelegate, MCBrowserViewControllerDelegate {
+    
+    @IBOutlet weak var gameView: UIView!
+    @IBOutlet weak var setupView: UIView!
 
-    @IBOutlet var connectButton: UIView!
     @IBOutlet weak var sendText: UITextField!
     
     var peerID: MCPeerID!
     var mcSession: MCSession!
     var mcAdvertiserAssistant: MCAdvertiserAssistant!
     
-    @IBAction func connectAction(_ sender: Any) {
-        joinSession(action: nil)
+    // REMOTE CONTROLLER FUNCTIONS //
+    
+    func sendRemoteControllerCommand(command: RemoteControllerAction) {
+        switch command {
+        case .MoveLeft:
+            sendString(str: "Left")
+        case .MoveRight:
+            sendString(str: "Right")
+        case .Fire:
+            sendString(str: "Fire")
+        default:
+            break
+        }
     }
     
-    @IBAction func sendButtonAction(_ sender: Any) {
-        sendString(str: sendText.text!)
+    // END REMOTE CONTROLLER FUNCTIONS //
+    
+    func hideSetupUI(hide: Bool) {
+        // Hide or show all of the setup UI elements depending on passed in boolean
+        setupView.isHidden = hide
+    }
+    
+    func hideGameUI(hide: Bool) {
+        // Hide or show all of the game UI elements depending on passed in boolean
+        gameView.isHidden = hide
     }
     
     override func viewDidLoad() {
@@ -32,6 +53,7 @@ class ViewController: UIViewController, MCSessionDelegate, MCBrowserViewControll
         peerID = MCPeerID(displayName: UIDevice.current.name)
         print(peerID)
         
+        // initialize Multipeer session for use
         mcSession = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .none)
         mcSession.delegate = self
     }
@@ -45,6 +67,7 @@ class ViewController: UIViewController, MCSessionDelegate, MCBrowserViewControll
         if mcSession.connectedPeers.count > 0 {
             if let stringData = str.data(using: String.Encoding.utf8) {
                 do {
+                    print("Sending string \(str)")
                     try mcSession.send(stringData, toPeers: mcSession.connectedPeers, with: .reliable)
                 } catch let error as NSError {
                     let ac = UIAlertController(title: "Send error", message: error.localizedDescription, preferredStyle: .alert)
@@ -64,14 +87,10 @@ class ViewController: UIViewController, MCSessionDelegate, MCBrowserViewControll
     }
     
     func joinSession(action: UIAlertAction!) {
+        print("joining")
         let mcBrowser = MCBrowserViewController(serviceType: "hws-kb", session: mcSession)
         mcBrowser.delegate = self
         present(mcBrowser, animated: true)
-        
-        if mcSession.connectedPeers.count > 0 {
-            print("Hiding connect button")
-            connectButton.isHidden = true
-        }
     }
     
     // REQUIRED FUNCTIONS FOR DELEGATES //
@@ -86,6 +105,10 @@ class ViewController: UIViewController, MCSessionDelegate, MCBrowserViewControll
     }
     
     func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController) {
+        if mcSession.connectedPeers.count > 0 {
+            hideSetupUI(hide: true)
+            hideGameUI(hide: false)
+        }
         dismiss(animated: true)
     }
     
