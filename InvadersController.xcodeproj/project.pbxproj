@@ -193,6 +193,7 @@
 				TargetAttributes = {
 					92CEA2381EA6B7BA0014A73E = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = AGBC5D2T97;
 						ProvisioningStyle = Automatic;
 					};
 					92CEA24C1EA6B7BB0014A73E = {
@@ -412,6 +413,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = AGBC5D2T97;
 				INFOPLIST_FILE = iPhone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.courtney.iPhone;
@@ -424,6 +426,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = AGBC5D2T97;
 				INFOPLIST_FILE = iPhone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.courtney.iPhone;

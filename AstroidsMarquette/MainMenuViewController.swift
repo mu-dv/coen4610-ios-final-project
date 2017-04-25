@@ -1,77 +1,55 @@
 //
-//  ViewController.swift
-//  iPhone
+//  MainMenuViewController.swift
+//  AstroidsMarquette
 //
-//  Created by Connery, Courtney on 4/18/17.
-//  Copyright © 2017 Connery, Courtney. All rights reserved.
+//  Created by Austin Anderson on 4/25/17.
+//  Copyright © 2017 austinandersonphoto. All rights reserved.
 //
 
 import UIKit
 import MultipeerConnectivity
 
-class ViewController: UIViewController, MCSessionDelegate, MCBrowserViewControllerDelegate {
-
-    @IBOutlet var connectButton: UIView!
-    @IBOutlet weak var sendText: UITextField!
+class MainMenuViewController: UIViewController, MCSessionDelegate, MCBrowserViewControllerDelegate {
     
     var peerID: MCPeerID!
     var mcSession: MCSession!
     var mcAdvertiserAssistant: MCAdvertiserAssistant!
     
-    @IBAction func connectAction(_ sender: Any) {
-        joinSession(action: nil)
+    @IBOutlet weak var connectButton: UIButton!
+    @IBOutlet weak var debugText: UILabel!
+    
+    func startHosting(action: UIAlertAction!) {
+        mcAdvertiserAssistant = MCAdvertiserAssistant(serviceType: "hws-kb", discoveryInfo: nil, session: mcSession)
+        mcAdvertiserAssistant.start()
     }
     
-    @IBAction func sendButtonAction(_ sender: Any) {
-        sendString(str: sendText.text!)
+    func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
+        // Receive strings from iPhone controller
+        if let inputString = String(data: data, encoding: .utf8) {
+            DispatchQueue.main.async { [unowned self] in
+                print("Received string: \(inputString)")
+                self.debugText.text = inputString
+            }
+        }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         peerID = MCPeerID(displayName: UIDevice.current.name)
         print(peerID)
         
         mcSession = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .none)
         mcSession.delegate = self
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    func sendString(str: String) {
-        if mcSession.connectedPeers.count > 0 {
-            if let stringData = str.data(using: String.Encoding.utf8) {
-                do {
-                    try mcSession.send(stringData, toPeers: mcSession.connectedPeers, with: .reliable)
-                } catch let error as NSError {
-                    let ac = UIAlertController(title: "Send error", message: error.localizedDescription, preferredStyle: .alert)
-                    ac.addAction(UIAlertAction(title: "OK", style: .default))
-                    present(ac, animated: true)
-                }
-            }
-        }
-    }
-    
-    func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-        if let str = String(data: data, encoding: .utf8) {
-            DispatchQueue.main.async { [unowned self] in
-                print("Received string: \(str)")
-            }
-        }
-    }
-    
-    func joinSession(action: UIAlertAction!) {
-        let mcBrowser = MCBrowserViewController(serviceType: "hws-kb", session: mcSession)
-        mcBrowser.delegate = self
-        present(mcBrowser, animated: true)
-        
-        if mcSession.connectedPeers.count > 0 {
-            print("Hiding connect button")
-            connectButton.isHidden = true
-        }
+    @IBAction func connectButtonAction(_ sender: Any) {
+        startHosting(action: nil)
     }
     
     // REQUIRED FUNCTIONS FOR DELEGATES //
@@ -103,6 +81,4 @@ class ViewController: UIViewController, MCSessionDelegate, MCBrowserViewControll
             print("Not Connected: \(peerID.displayName)")
         }
     }
-
 }
-
