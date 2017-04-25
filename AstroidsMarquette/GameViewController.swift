@@ -11,25 +11,50 @@ import UIKit
 class GameViewController: UIViewController {
     
     @IBOutlet weak var backgroundImage: UIImageView!
+    
+    var backgroundOriginalFrame: CGRect!
+    
+    func addNewBackgroundImage() {
+        print("adding new image to scroll")
+        // create new image
+        let imageName = #imageLiteral(resourceName: "star-background")
+        let imageFrame = backgroundOriginalFrame
+        let imageView = UIImageView(frame: imageFrame!)
+        imageView.image = imageName
+        
+        UIView.animate(withDuration: 15.0, animations: {
+            print(imageView.frame)
+            var frame = imageView.frame
+            frame.origin.y -= frame.size.height
+            
+            imageView.frame = frame
+        }, completion: {finished in
+            print("done scrolling new")
+        })
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        UIView.animate(withDuration: 1.0) {
-            self.backgroundImage.center.y += 1
-        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        UIView.animate(withDuration: 5.0, animations: {
+        // save original background location from frame
+        let org = backgroundImage.frame
+        backgroundOriginalFrame = org
+        
+        UIView.animate(withDuration: 15.0, animations: {
+            print(self.backgroundImage.frame)
             var frame = self.backgroundImage.frame
             frame.origin.y -= frame.size.height
             
             self.backgroundImage.frame = frame
         }, completion: { finished in
-            print("SCROLLING")
+            print("done scrolling")
+            print(self.backgroundImage.frame)
+            self.addNewBackgroundImage()
         })
     }
 
@@ -37,7 +62,6 @@ class GameViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation
