@@ -24,12 +24,18 @@ class RemoteViewController: UIViewController, MCSessionDelegate, MCBrowserViewCo
     
     func sendRemoteControllerCommand(command: RemoteControllerAction) {
         switch command {
-        case .MoveLeft:
-            sendString(str: "Left")
-        case .MoveRight:
-            sendString(str: "Right")
-        case .Fire:
-            sendString(str: "Fire")
+        case .MoveLeftDown:
+            sendString(str: "LeftDown")
+        case .MoveLeftUp:
+            sendString(str: "LeftUp")
+        case .MoveRightDown:
+            sendString(str: "RightDown")
+        case .MoveRightUp:
+            sendString(str: "RightUp")
+        case .FireDown:
+            sendString(str: "FireDown")
+        case .FireUp:
+            sendString(str: "FireUp")
         default:
             break
         }
@@ -88,7 +94,7 @@ class RemoteViewController: UIViewController, MCSessionDelegate, MCBrowserViewCo
     
     func joinSession(action: UIAlertAction!) {
         print("joining")
-        let mcBrowser = MCBrowserViewController(serviceType: "hws-kb", session: mcSession)
+        let mcBrowser = MCBrowserViewController(serviceType: "astroids-m", session: mcSession)
         mcBrowser.delegate = self
         present(mcBrowser, animated: true)
     }

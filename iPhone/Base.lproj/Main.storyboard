@@ -102,7 +102,9 @@
                                 <color key="backgroundColor" red="0.76369274013493849" green="1" blue="0.81881288417705189" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Move Left"/>
                                 <connections>
-                                    <action selector="moveLeftAction:" destination="jn1-GU-xrq" eventType="touchUpInside" id="n01-n9-Qv8"/>
+                                    <action selector="moveLeftDownAction:" destination="jn1-GU-xrq" eventType="touchDown" id="IQR-xs-FII"/>
+                                    <action selector="moveLeftUpAction:" destination="jn1-GU-xrq" eventType="touchUpOutside" id="clg-0d-cBP"/>
+                                    <action selector="moveLeftUpAction:" destination="jn1-GU-xrq" eventType="touchUpInside" id="r8f-F5-4eb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RUK-mh-SzR">
@@ -111,7 +113,9 @@
                                 <color key="backgroundColor" red="0.76369274009999999" green="1" blue="0.81881288419999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Move Right"/>
                                 <connections>
-                                    <action selector="moveRightAction:" destination="jn1-GU-xrq" eventType="touchUpInside" id="tKi-kV-gqH"/>
+                                    <action selector="moveRightDownAction:" destination="jn1-GU-xrq" eventType="touchDown" id="7Fx-c7-fno"/>
+                                    <action selector="moveRightUpAction:" destination="jn1-GU-xrq" eventType="touchUpInside" id="HzJ-YR-QKx"/>
+                                    <action selector="moveRightUpAction:" destination="jn1-GU-xrq" eventType="touchUpOutside" id="TfE-2E-nmG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZq-NT-h1B">
@@ -120,7 +124,9 @@
                                 <color key="backgroundColor" red="1" green="0.70752389456118592" blue="0.68941022437740718" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Fire"/>
                                 <connections>
-                                    <action selector="fireAction:" destination="jn1-GU-xrq" eventType="touchUpInside" id="HtU-Q9-jUp"/>
+                                    <action selector="fireDownAction:" destination="jn1-GU-xrq" eventType="touchDown" id="0d8-KD-GIU"/>
+                                    <action selector="fireUpAction:" destination="jn1-GU-xrq" eventType="touchUpOutside" id="0Ph-kI-adR"/>
+                                    <action selector="fireUpAction:" destination="jn1-GU-xrq" eventType="touchUpInside" id="C9j-xp-gJa"/>
                                 </connections>
                             </button>
                         </subviews>

@@ -134,7 +134,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate
             enemies.removeAllChildren()
             self.removeAllChildren()
             
-            
             // Initialize Score label
             curScoreLabel.text = "Lives: 0 Score: 0"
             curScoreLabel.fontSize = 20
@@ -284,6 +283,34 @@ class GameScene: SKScene, SKPhysicsContactDelegate
         else
         {
             player.moveDir = Direction.NONE;
+        }
+    }
+    
+    func receiveNetworkEvent(input: String)
+    {
+        if (input == "LeftDown")
+        {
+            player.moveDir = Direction.LEFT
+        }
+        if (input == "LeftUp")
+        {
+            player.moveDir = Direction.NONE
+        }
+        if (input == "RightDown")
+        {
+            player.moveDir = Direction.RIGHT
+        }
+        if (input == "RightUp")
+        {
+            player.moveDir = Direction.NONE
+        }
+        if (input == "FireDown")
+        {
+            self.addChild(player.shootBullet()!)
+        }
+        if (input == "FireUp")
+        {
+            // do nothing
         }
     }
     

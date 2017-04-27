@@ -20,6 +20,32 @@ class Player : SKSpriteNode
     var lives : Int = 0
     var moveDir : Direction = Direction.NONE
     
+    func shootBullet() -> SKSpriteNode?
+    {
+        // for network usage
+        let bullet = SKSpriteNode(imageNamed: "projectile")
+        bullet.position = self.position
+        
+        bullet.physicsBody = SKPhysicsBody(circleOfRadius: bullet.size.width/2)
+        bullet.physicsBody?.isDynamic = true
+        bullet.physicsBody?.categoryBitMask = PhysicsCategory.PlayerBullet
+        bullet.physicsBody?.contactTestBitMask = PhysicsCategory.Enemy
+        bullet.physicsBody?.collisionBitMask = PhysicsCategory.None
+        bullet.physicsBody?.usesPreciseCollisionDetection = true
+        
+        let newPos = self.position + CGPoint (x: 0.0, y: 1000)
+        
+        // Create the actions
+        let actionMove = SKAction.move(to: newPos, duration: 4.0)
+        let actionMoveDone = SKAction.removeFromParent()
+        bullet.run(SKAction.sequence([actionMove, actionMoveDone]))
+        
+        // Play shooting sound
+        run(SKAction.playSoundFileNamed("pew-pew-lei.caf", waitForCompletion: false))
+        
+        return bullet
+    }
+    
     func shootBullet(touchLocation : CGPoint) -> SKSpriteNode?
     {
         // Set up initial location of projectile

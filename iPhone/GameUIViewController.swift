@@ -21,15 +21,27 @@ class GameUIViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func moveLeftAction(_ sender: Any) {
-        (parent as! RemoteViewController).sendRemoteControllerCommand(command: RemoteControllerAction.MoveLeft)
+    @IBAction func moveLeftDownAction(_ sender: Any) {
+        (parent as! RemoteViewController).sendRemoteControllerCommand(command: RemoteControllerAction.MoveLeftDown)
     }
     
-    @IBAction func moveRightAction(_ sender: Any) {
-        (parent as! RemoteViewController).sendRemoteControllerCommand(command: RemoteControllerAction.MoveRight)
+    @IBAction func moveLeftUpAction(_ sender: Any) {
+        (parent as! RemoteViewController).sendRemoteControllerCommand(command: RemoteControllerAction.MoveLeftUp)
     }
     
-    @IBAction func fireAction(_ sender: Any) {
-        (parent as! RemoteViewController).sendRemoteControllerCommand(command: RemoteControllerAction.Fire)
+    @IBAction func moveRightDownAction(_ sender: Any) {
+        (parent as! RemoteViewController).sendRemoteControllerCommand(command: RemoteControllerAction.MoveRightDown)
+    }
+    
+    @IBAction func moveRightUpAction(_ sender: Any) {
+        (parent as! RemoteViewController).sendRemoteControllerCommand(command: RemoteControllerAction.MoveRightUp)
+    }
+    
+    @IBAction func fireDownAction(_ sender: Any) {
+        (parent as! RemoteViewController).sendRemoteControllerCommand(command: RemoteControllerAction.FireDown)
+    }
+    
+    @IBAction func fireUpAction(_ sender: Any) {
+        (parent as! RemoteViewController).sendRemoteControllerCommand(command: RemoteControllerAction.FireUp)
     }
 }
