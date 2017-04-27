@@ -19,7 +19,7 @@ class MainMenuViewController: UIViewController, MCSessionDelegate, MCBrowserView
     @IBOutlet weak var debugText: UILabel!
     
     func startHosting(action: UIAlertAction!) {
-        mcAdvertiserAssistant = MCAdvertiserAssistant(serviceType: "hws-kb", discoveryInfo: nil, session: mcSession)
+        mcAdvertiserAssistant = MCAdvertiserAssistant(serviceType: "astroids-m", discoveryInfo: nil, session: mcSession)
         mcAdvertiserAssistant.start()
     }
     
@@ -50,6 +50,9 @@ class MainMenuViewController: UIViewController, MCSessionDelegate, MCBrowserView
     
     @IBAction func connectButtonAction(_ sender: Any) {
         startHosting(action: nil)
+    }
+    
+    @IBAction func myUnwindAction(unwindSegue: UIStoryboardSegue) {
     }
     
     // REQUIRED FUNCTIONS FOR DELEGATES //

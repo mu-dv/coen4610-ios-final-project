@@ -21,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D9AEE3571EB2A49A00826964 /* AstroidsTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstroidsTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE11A0B61EAFAF66009E3224 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		EE11A0B81EAFB1A1009E3224 /* Alien.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alien.swift; sourceTree = "<group>"; };
 		EEBCBDEE1EAD2B2300F3A05E /* SpriteKitSimpleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpriteKitSimpleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,6 +38,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D9AEE3541EB2A49A00826964 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EEBCBDEB1EAD2B2300F3A05E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -59,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				EEBCBDEE1EAD2B2300F3A05E /* SpriteKitSimpleGame.app */,
+				D9AEE3571EB2A49A00826964 /* AstroidsTV.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -93,6 +102,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D9AEE3561EB2A49A00826964 /* AstroidsTV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9AEE3651EB2A49A00826964 /* Build configuration list for PBXNativeTarget "AstroidsTV" */;
+			buildPhases = (
+				D9AEE3531EB2A49A00826964 /* Sources */,
+				D9AEE3541EB2A49A00826964 /* Frameworks */,
+				D9AEE3551EB2A49A00826964 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AstroidsTV;
+			productName = AstroidsTV;
+			productReference = D9AEE3571EB2A49A00826964 /* AstroidsTV.app */;
+			productType = "com.apple.product-type.application";
+		};
 		EEBCBDED1EAD2B2300F3A05E /* SpriteKitSimpleGame */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EEBCBE061EAD2B2400F3A05E /* Build configuration list for PBXNativeTarget "SpriteKitSimpleGame" */;
@@ -120,6 +146,11 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Drew Vanderwiel";
 				TargetAttributes = {
+					D9AEE3561EB2A49A00826964 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = AGBC5D2T97;
+						ProvisioningStyle = Automatic;
+					};
 					EEBCBDED1EAD2B2300F3A05E = {
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = AGBC5D2T97;
@@ -141,11 +172,19 @@
 			projectRoot = "";
 			targets = (
 				EEBCBDED1EAD2B2300F3A05E /* SpriteKitSimpleGame */,
+				D9AEE3561EB2A49A00826964 /* AstroidsTV */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D9AEE3551EB2A49A00826964 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EEBCBDEC1EAD2B2300F3A05E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -161,6 +200,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D9AEE3531EB2A49A00826964 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EEBCBDEA1EAD2B2300F3A05E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -196,6 +242,40 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D9AEE3631EB2A49A00826964 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = AGBC5D2T97;
+				INFOPLIST_FILE = AstroidsTV/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.austinandersonphoto.AstroidsTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Debug;
+		};
+		D9AEE3641EB2A49A00826964 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = AGBC5D2T97;
+				INFOPLIST_FILE = AstroidsTV/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.austinandersonphoto.AstroidsTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Release;
+		};
 		EEBCBE041EAD2B2400F3A05E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -324,6 +404,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D9AEE3651EB2A49A00826964 /* Build configuration list for PBXNativeTarget "AstroidsTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9AEE3631EB2A49A00826964 /* Debug */,
+				D9AEE3641EB2A49A00826964 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		EEBCBDE91EAD2B2300F3A05E /* Build configuration list for PBXProject "SpriteKitSimpleGame" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

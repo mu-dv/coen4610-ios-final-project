@@ -67,10 +67,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rlR-Hm-2cz">
-                                <rect key="frame" x="591" y="736" width="276" height="86"/>
+                                <rect key="frame" x="617" y="735" width="276" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="Highscores"/>
+                                <connections>
+                                    <segue destination="W7Z-PK-Jdb" kind="show" id="1k5-X3-PQj"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rkr-UA-A0X">
                                 <rect key="frame" x="1029" y="735" width="276" height="86"/>
@@ -81,68 +84,89 @@
                                     <segue destination="JZp-0T-egD" kind="unwind" unwindAction="myUnwindActionWithUnwindSegue:" id="T96-sK-Ssy"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Waiting for controller to connect..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXD-i0-Cy9">
+                                <rect key="frame" x="533" y="108" width="854" height="226"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QRb-Im-uZn">
                                 <rect key="frame" x="800" y="481" width="321" height="119"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="67"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="Play"/>
-                                <connections>
-                                    <segue destination="04j-0x-roa" kind="show" id="cyB-6O-LNN"/>
-                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Debug text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXD-i0-Cy9">
-                                <rect key="frame" x="515" y="119" width="854" height="226"/>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="debugText" destination="kXD-i0-Cy9" id="dPf-Lh-6Gf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="71S-sX-Glz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="QFb-e5-eJ7" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2302" y="74"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Aml-FS-u5T">
+            <objects>
+                <viewController id="pOY-yU-gNm" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Gz9-VY-u07"/>
+                        <viewControllerLayoutGuide type="bottom" id="V2l-cD-T2k"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hqU-yL-qMH">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JEx-7v-2gw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4523" y="551"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="y50-NG-4vZ">
+            <objects>
+                <viewController id="W7Z-PK-Jdb" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="o0t-jP-CDm"/>
+                        <viewControllerLayoutGuide type="bottom" id="IQa-49-Veb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="a2f-mS-3AI">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Highscores" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="drW-vs-nHR">
+                                <rect key="frame" x="716" y="80" width="488" height="175"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name - Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dz2-G8-rpl">
+                                <rect key="frame" x="694" y="326" width="533" height="428"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="svc-Ob-xLH">
-                                <rect key="frame" x="282" y="497" width="276" height="86"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5VK-M3-FgX">
+                                <rect key="frame" x="825" y="920" width="271" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                <state key="normal" title="Connect"/>
+                                <state key="normal" title="Back"/>
                                 <connections>
-                                    <action selector="connectButtonAction:" destination="ZS7-Ox-qkQ" eventType="primaryActionTriggered" id="6Ta-gd-iMV"/>
+                                    <segue destination="QFb-e5-eJ7" kind="unwind" unwindAction="myUnwindActionWithUnwindSegue:" id="YQR-Ex-hp4"/>
                                 </connections>
                             </button>
                         </subviews>
                     </view>
-                    <connections>
-                        <outlet property="connectButton" destination="svc-Ob-xLH" id="OKY-zY-BYD"/>
-                        <outlet property="debugText" destination="kXD-i0-Cy9" id="dPf-Lh-6Gf"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="71S-sX-Glz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q3F-C2-jfZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2302" y="74"/>
-        </scene>
-        <!--Game View Controller-->
-        <scene sceneID="uer-A1-Lq6">
-            <objects>
-                <viewController id="04j-0x-roa" customClass="GameViewController" customModule="AstroidsMarquette" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="dBW-qO-Bbj"/>
-                        <viewControllerLayoutGuide type="bottom" id="7OI-Hr-1Fx"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ks9-vr-AhM">
-                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star-background" translatesAutoresizingMaskIntoConstraints="NO" id="x4v-kt-sQF" userLabel="Background">
-                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1920"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                    </view>
-                    <connections>
-                        <outlet property="backgroundImage" destination="x4v-kt-sQF" id="Uum-Qi-Y67"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cq6-8b-D5u" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3370" y="1696"/>
+            <point key="canvasLocation" x="2302" y="1455"/>
         </scene>
         <!--About-->
         <scene sceneID="sDE-gY-Alz">
@@ -184,10 +208,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ohq-RJ-Wfg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="70" y="1455"/>
+            <point key="canvasLocation" x="153" y="1455"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="star-background" width="1920" height="1920"/>
-    </resources>
 </document>
