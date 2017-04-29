@@ -10,9 +10,11 @@ import UIKit
 
 class HighscoresViewController: UIViewController {
 
+    @IBOutlet weak var highScores: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        highScores.text = getHighscores(url: URL(string: "http://192.168.1.2:8081/score/name/1234")!)
         // Do any additional setup after loading the view.
     }
 
@@ -21,7 +23,30 @@ class HighscoresViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func getHighscores(url: URL) -> String
+    {
+        var newStr : String = "default"
+        
+        let task = URLSession.shared.dataTask(with: url)
+        {
+            (data, response, error) in
+            if let d = data
+            {
+                if let str = String(data: d, encoding: String.Encoding.utf8)
+                {
+                    newStr = str
+                }
+            }
+        }
+        
+        task.resume()
+        
+        while (newStr == "default")
+        {
+            // wait until get something back
+        }
+        return newStr
+    }
     /*
     // MARK: - Navigation
 
