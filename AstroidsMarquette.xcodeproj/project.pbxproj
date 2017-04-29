@@ -13,7 +13,14 @@
 		D93C11641E944376002C8556 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D93C11621E944376002C8556 /* Main.storyboard */; };
 		D93C11661E944376002C8556 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D93C11651E944376002C8556 /* Assets.xcassets */; };
 		D93C116E1E944710002C8556 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93C116D1E944710002C8556 /* AboutViewController.swift */; };
-		D9B361031E96E60B00A0C909 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B361021E96E60B00A0C909 /* GameViewController.swift */; };
+		D9AEE36B1EB2A73200826964 /* Alien.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AEE3661EB2A73200826964 /* Alien.swift */; };
+		D9AEE36C1EB2A73200826964 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AEE3671EB2A73200826964 /* GameOverScene.swift */; };
+		D9AEE36D1EB2A73200826964 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AEE3681EB2A73200826964 /* GameScene.swift */; };
+		D9AEE36E1EB2A73200826964 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AEE3691EB2A73200826964 /* GameViewController.swift */; };
+		D9AEE36F1EB2A73200826964 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AEE36A1EB2A73200826964 /* Player.swift */; };
+		D9AEE3711EB2A90400826964 /* HighscoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AEE3701EB2A90400826964 /* HighscoresViewController.swift */; };
+		D9AEE3751EB2AE0200826964 /* background-music-aac.caf in Resources */ = {isa = PBXBuildFile; fileRef = D9AEE3731EB2AE0200826964 /* background-music-aac.caf */; };
+		D9AEE3761EB2AE0200826964 /* pew-pew-lei.caf in Resources */ = {isa = PBXBuildFile; fileRef = D9AEE3741EB2AE0200826964 /* pew-pew-lei.caf */; };
 		D9FD92271EAFF80700C4CB0E /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FD92261EAFF80700C4CB0E /* MainMenuViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +33,14 @@
 		D93C11651E944376002C8556 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D93C11671E944376002C8556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D93C116D1E944710002C8556 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
-		D9B361021E96E60B00A0C909 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		D9AEE3661EB2A73200826964 /* Alien.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alien.swift; path = ../Alien.swift; sourceTree = "<group>"; };
+		D9AEE3671EB2A73200826964 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameOverScene.swift; path = ../GameOverScene.swift; sourceTree = "<group>"; };
+		D9AEE3681EB2A73200826964 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameScene.swift; path = ../GameScene.swift; sourceTree = "<group>"; };
+		D9AEE3691EB2A73200826964 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = ../GameViewController.swift; sourceTree = "<group>"; };
+		D9AEE36A1EB2A73200826964 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = ../Player.swift; sourceTree = "<group>"; };
+		D9AEE3701EB2A90400826964 /* HighscoresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighscoresViewController.swift; sourceTree = "<group>"; };
+		D9AEE3731EB2AE0200826964 /* background-music-aac.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "background-music-aac.caf"; sourceTree = "<group>"; };
+		D9AEE3741EB2AE0200826964 /* pew-pew-lei.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pew-pew-lei.caf"; sourceTree = "<group>"; };
 		D9FD92261EAFF80700C4CB0E /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,17 +74,32 @@
 		D93C115D1E944376002C8556 /* AstroidsMarquette */ = {
 			isa = PBXGroup;
 			children = (
+				D9AEE3661EB2A73200826964 /* Alien.swift */,
+				D9AEE3671EB2A73200826964 /* GameOverScene.swift */,
+				D9AEE3681EB2A73200826964 /* GameScene.swift */,
+				D9AEE3691EB2A73200826964 /* GameViewController.swift */,
+				D9AEE36A1EB2A73200826964 /* Player.swift */,
 				D93C115E1E944376002C8556 /* AppDelegate.swift */,
 				D93C11601E944376002C8556 /* LaunchScreenViewController.swift */,
 				D93C11621E944376002C8556 /* Main.storyboard */,
+				D9AEE3701EB2A90400826964 /* HighscoresViewController.swift */,
 				D9FD92261EAFF80700C4CB0E /* MainMenuViewController.swift */,
 				D92C89341EB007CD002FFE51 /* RemoteControllerActions.swift */,
-				D9B361021E96E60B00A0C909 /* GameViewController.swift */,
 				D93C116D1E944710002C8556 /* AboutViewController.swift */,
 				D93C11651E944376002C8556 /* Assets.xcassets */,
 				D93C11671E944376002C8556 /* Info.plist */,
+				D9AEE3721EB2AE0200826964 /* Sounds */,
 			);
 			path = AstroidsMarquette;
+			sourceTree = "<group>";
+		};
+		D9AEE3721EB2AE0200826964 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				D9AEE3731EB2AE0200826964 /* background-music-aac.caf */,
+				D9AEE3741EB2AE0200826964 /* pew-pew-lei.caf */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +164,8 @@
 			files = (
 				D93C11661E944376002C8556 /* Assets.xcassets in Resources */,
 				D93C11641E944376002C8556 /* Main.storyboard in Resources */,
+				D9AEE3751EB2AE0200826964 /* background-music-aac.caf in Resources */,
+				D9AEE3761EB2AE0200826964 /* pew-pew-lei.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,11 +176,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9B361031E96E60B00A0C909 /* GameViewController.swift in Sources */,
+				D9AEE36F1EB2A73200826964 /* Player.swift in Sources */,
+				D9AEE36E1EB2A73200826964 /* GameViewController.swift in Sources */,
 				D9FD92271EAFF80700C4CB0E /* MainMenuViewController.swift in Sources */,
+				D9AEE36C1EB2A73200826964 /* GameOverScene.swift in Sources */,
+				D9AEE36D1EB2A73200826964 /* GameScene.swift in Sources */,
 				D93C116E1E944710002C8556 /* AboutViewController.swift in Sources */,
+				D9AEE3711EB2A90400826964 /* HighscoresViewController.swift in Sources */,
 				D92C89351EB007CD002FFE51 /* RemoteControllerActions.swift in Sources */,
 				D93C11611E944376002C8556 /* LaunchScreenViewController.swift in Sources */,
+				D9AEE36B1EB2A73200826964 /* Alien.swift in Sources */,
 				D93C115F1E944376002C8556 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

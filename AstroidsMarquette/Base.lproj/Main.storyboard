@@ -97,6 +97,9 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="67"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="Play"/>
+                                <connections>
+                                    <segue destination="pOY-yU-gNm" kind="show" identifier="LaunchGameSegue" id="WVa-iV-7h2"/>
+                                </connections>
                             </button>
                         </subviews>
                     </view>
@@ -109,27 +112,27 @@
             </objects>
             <point key="canvasLocation" x="2302" y="74"/>
         </scene>
-        <!--View Controller-->
+        <!--Game-->
         <scene sceneID="Aml-FS-u5T">
             <objects>
-                <viewController id="pOY-yU-gNm" sceneMemberID="viewController">
+                <viewController id="pOY-yU-gNm" userLabel="Game" customClass="GameViewController" customModule="AstroidsMarquette" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Gz9-VY-u07"/>
                         <viewControllerLayoutGuide type="bottom" id="V2l-cD-T2k"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="hqU-yL-qMH">
+                    <view key="view" contentMode="scaleToFill" id="hqU-yL-qMH" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JEx-7v-2gw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4523" y="551"/>
+            <point key="canvasLocation" x="4680" y="701"/>
         </scene>
-        <!--View Controller-->
+        <!--Highscores-->
         <scene sceneID="y50-NG-4vZ">
             <objects>
-                <viewController id="W7Z-PK-Jdb" sceneMemberID="viewController">
+                <viewController id="W7Z-PK-Jdb" userLabel="Highscores" customClass="HighscoresViewController" customModule="AstroidsMarquette" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="o0t-jP-CDm"/>
                         <viewControllerLayoutGuide type="bottom" id="IQa-49-Veb"/>

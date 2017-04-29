@@ -11,12 +11,16 @@ import MultipeerConnectivity
 
 class MainMenuViewController: UIViewController, MCSessionDelegate, MCBrowserViewControllerDelegate {
     
-    var peerID: MCPeerID!
-    var mcSession: MCSession!
+    var peerID               : MCPeerID!
+    var mcSession            : MCSession!
     var mcAdvertiserAssistant: MCAdvertiserAssistant!
     
     @IBOutlet weak var connectButton: UIButton!
-    @IBOutlet weak var debugText: UILabel!
+    @IBOutlet weak var debugText    : UILabel!
+    
+    // CURRECT DIRECTION AND FIRE STATUS //
+    var direction: Direction = Direction.NONE
+    var fire     : Bool = false
     
     func startHosting(action: UIAlertAction!) {
         mcAdvertiserAssistant = MCAdvertiserAssistant(serviceType: "astroids-m", discoveryInfo: nil, session: mcSession)
@@ -27,11 +31,47 @@ class MainMenuViewController: UIViewController, MCSessionDelegate, MCBrowserView
         // Receive strings from iPhone controller
         if let inputString = String(data: data, encoding: .utf8) {
             DispatchQueue.main.async { [unowned self] in
+                // MAGIC HAPPENS HERE //
                 print("Received string: \(inputString)")
-                self.debugText.text = inputString
+                self.receiveNetworkEvent(input: inputString)
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "LaunchGameSegue") {
+            (segue.destination as! GameViewController).mainMenu = self
+        }
+    }
+    
+    func receiveNetworkEvent(input: String)
+    {
+        if (input == "LeftDown")
+        {
+            direction = Direction.LEFT
+        }
+        if (input == "LeftUp")
+        {
+            direction = Direction.NONE
+        }
+        if (input == "RightDown")
+        {
+            direction = Direction.RIGHT
+        }
+        if (input == "RightUp")
+        {
+            direction = Direction.NONE
+        }
+        if (input == "FireDown")
+        {
+            fire = true
+        }
+        if (input == "FireUp")
+        {
+            fire = false
+        }
+    }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,15 +81,13 @@ class MainMenuViewController: UIViewController, MCSessionDelegate, MCBrowserView
         
         mcSession = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .none)
         mcSession.delegate = self
+        
+        startHosting(action: nil)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func connectButtonAction(_ sender: Any) {
-        startHosting(action: nil)
     }
     
     @IBAction func myUnwindAction(unwindSegue: UIStoryboardSegue) {
