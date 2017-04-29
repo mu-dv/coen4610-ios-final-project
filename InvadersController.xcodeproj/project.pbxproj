@@ -12,11 +12,9 @@
 		92CEA2421EA6B7BA0014A73E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92CEA2401EA6B7BA0014A73E /* Main.storyboard */; };
 		92CEA2441EA6B7BA0014A73E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92CEA2431EA6B7BA0014A73E /* Assets.xcassets */; };
 		92CEA2471EA6B7BA0014A73E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92CEA2451EA6B7BA0014A73E /* LaunchScreen.storyboard */; };
-		92CEA2521EA6B7BB0014A73E /* iPhoneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CEA2511EA6B7BB0014A73E /* iPhoneTests.swift */; };
-		92CEA25D1EA6B7BB0014A73E /* iPhoneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CEA25C1EA6B7BB0014A73E /* iPhoneUITests.swift */; };
 		D921E5611EB0047F009E34D9 /* SetupUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D921E5601EB0047F009E34D9 /* SetupUIViewController.swift */; };
 		D921E5631EB0063B009E34D9 /* GameUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D921E5621EB0063B009E34D9 /* GameUIViewController.swift */; };
-		D92C89331EB0076C002FFE51 /* RemoteControllerAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92C89321EB0076C002FFE51 /* RemoteControllerAction.swift */; };
+		FA40D49C1EB532BA002B1EE8 /* RemoteControllerAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40D49B1EB532BA002B1EE8 /* RemoteControllerAction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +43,10 @@
 		92CEA2461EA6B7BA0014A73E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92CEA2481EA6B7BA0014A73E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92CEA24D1EA6B7BB0014A73E /* InvadersControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InvadersControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		92CEA2511EA6B7BB0014A73E /* iPhoneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhoneTests.swift; sourceTree = "<group>"; };
-		92CEA2531EA6B7BB0014A73E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92CEA2581EA6B7BB0014A73E /* InvadersControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InvadersControllerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		92CEA25C1EA6B7BB0014A73E /* iPhoneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhoneUITests.swift; sourceTree = "<group>"; };
-		92CEA25E1EA6B7BB0014A73E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D921E5601EB0047F009E34D9 /* SetupUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupUIViewController.swift; sourceTree = "<group>"; };
 		D921E5621EB0063B009E34D9 /* GameUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameUIViewController.swift; sourceTree = "<group>"; };
-		D92C89321EB0076C002FFE51 /* RemoteControllerAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemoteControllerAction.swift; path = ../../SharedResources/RemoteControllerAction.swift; sourceTree = "<group>"; };
+		FA40D49B1EB532BA002B1EE8 /* RemoteControllerAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteControllerAction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,8 +78,6 @@
 			isa = PBXGroup;
 			children = (
 				92CEA23B1EA6B7BA0014A73E /* iPhone */,
-				92CEA2501EA6B7BB0014A73E /* iPhoneTests */,
-				92CEA25B1EA6B7BB0014A73E /* iPhoneUITests */,
 				92CEA23A1EA6B7BA0014A73E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,10 +95,10 @@
 		92CEA23B1EA6B7BA0014A73E /* iPhone */ = {
 			isa = PBXGroup;
 			children = (
+				FA40D49B1EB532BA002B1EE8 /* RemoteControllerAction.swift */,
 				92CEA23C1EA6B7BA0014A73E /* AppDelegate.swift */,
 				92CEA23E1EA6B7BA0014A73E /* RemoteViewController.swift */,
 				92CEA2401EA6B7BA0014A73E /* Main.storyboard */,
-				D92C89321EB0076C002FFE51 /* RemoteControllerAction.swift */,
 				D921E5621EB0063B009E34D9 /* GameUIViewController.swift */,
 				D921E5601EB0047F009E34D9 /* SetupUIViewController.swift */,
 				92CEA2431EA6B7BA0014A73E /* Assets.xcassets */,
@@ -114,24 +106,6 @@
 				92CEA2481EA6B7BA0014A73E /* Info.plist */,
 			);
 			path = iPhone;
-			sourceTree = "<group>";
-		};
-		92CEA2501EA6B7BB0014A73E /* iPhoneTests */ = {
-			isa = PBXGroup;
-			children = (
-				92CEA2511EA6B7BB0014A73E /* iPhoneTests.swift */,
-				92CEA2531EA6B7BB0014A73E /* Info.plist */,
-			);
-			path = iPhoneTests;
-			sourceTree = "<group>";
-		};
-		92CEA25B1EA6B7BB0014A73E /* iPhoneUITests */ = {
-			isa = PBXGroup;
-			children = (
-				92CEA25C1EA6B7BB0014A73E /* iPhoneUITests.swift */,
-				92CEA25E1EA6B7BB0014A73E /* Info.plist */,
-			);
-			path = iPhoneUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,8 +245,8 @@
 			files = (
 				D921E5631EB0063B009E34D9 /* GameUIViewController.swift in Sources */,
 				92CEA23F1EA6B7BA0014A73E /* RemoteViewController.swift in Sources */,
-				D92C89331EB0076C002FFE51 /* RemoteControllerAction.swift in Sources */,
 				92CEA23D1EA6B7BA0014A73E /* AppDelegate.swift in Sources */,
+				FA40D49C1EB532BA002B1EE8 /* RemoteControllerAction.swift in Sources */,
 				D921E5611EB0047F009E34D9 /* SetupUIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,7 +255,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92CEA2521EA6B7BB0014A73E /* iPhoneTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +262,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92CEA25D1EA6B7BB0014A73E /* iPhoneUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,7 +400,7 @@
 				DEVELOPMENT_TEAM = AGBC5D2T97;
 				INFOPLIST_FILE = iPhone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.courtney.iPhone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.invaderscontrol;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -441,7 +413,7 @@
 				DEVELOPMENT_TEAM = AGBC5D2T97;
 				INFOPLIST_FILE = iPhone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.courtney.iPhone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.invaderscontrol;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

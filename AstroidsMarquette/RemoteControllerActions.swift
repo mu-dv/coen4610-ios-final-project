@@ -8,7 +8,8 @@
 
 import Foundation
 
-enum RemoteControllerActions {
+enum RemoteControllerActions
+{
     case MoveLeft
     case MoveRight
     case Fire

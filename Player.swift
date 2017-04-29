@@ -24,7 +24,9 @@ class Player : SKSpriteNode
     func shootBullet() -> SKSpriteNode?
     {
         // for network usage
-        let bullet = SKSpriteNode(imageNamed: "projectile")
+        let bullet = SKSpriteNode(imageNamed: "player_bullet")
+        bullet.setScale(0.7)
+        bullet.zRotation = CGFloat.pi
         bullet.position = self.position
         
         bullet.physicsBody = SKPhysicsBody(circleOfRadius: bullet.size.width/2)
@@ -50,7 +52,9 @@ class Player : SKSpriteNode
     func shootBullet(touchLocation : CGPoint) -> SKSpriteNode?
     {
         // Set up initial location of projectile
-        let bullet = SKSpriteNode(imageNamed: "projectile")
+        let bullet = SKSpriteNode(imageNamed: "player_bullet")
+        bullet.setScale(0.7)
+        bullet.zRotation = CGFloat.pi
         bullet.position = self.position
         
         bullet.physicsBody = SKPhysicsBody(circleOfRadius: bullet.size.width/2)

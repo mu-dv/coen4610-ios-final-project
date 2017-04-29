@@ -15,8 +15,10 @@ class Alien : SKSpriteNode
     func shootBullet() -> SKSpriteNode?
     {
         // 2 - Set up initial location of projectile
-        let bullet = SKSpriteNode(imageNamed: "projectile")
-        bullet.position = self.position
+        let bullet = SKSpriteNode(imageNamed: "enemy_bullet")
+        bullet.zRotation = CGFloat.pi
+        bullet.setScale(0.5)
+        bullet.position = self.position + CGPoint(x: 0.0, y: -self.size.width/2)
         
         bullet.physicsBody = SKPhysicsBody(circleOfRadius: bullet.size.width/2)
         bullet.physicsBody?.isDynamic = true

@@ -9,7 +9,8 @@
 import UIKit
 import MultipeerConnectivity
 
-class MainMenuViewController: UIViewController, MCSessionDelegate, MCBrowserViewControllerDelegate {
+class MainMenuViewController: UIViewController, MCSessionDelegate, MCBrowserViewControllerDelegate
+{
     
     var peerID               : MCPeerID!
     var mcSession            : MCSession!
@@ -22,15 +23,19 @@ class MainMenuViewController: UIViewController, MCSessionDelegate, MCBrowserView
     var direction: Direction = Direction.NONE
     var fire     : Bool = false
     
-    func startHosting(action: UIAlertAction!) {
+    func startHosting(action: UIAlertAction!)
+    {
         mcAdvertiserAssistant = MCAdvertiserAssistant(serviceType: "astroids-m", discoveryInfo: nil, session: mcSession)
         mcAdvertiserAssistant.start()
     }
     
-    func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
+    func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID)
+    {
         // Receive strings from iPhone controller
-        if let inputString = String(data: data, encoding: .utf8) {
-            DispatchQueue.main.async { [unowned self] in
+        if let inputString = String(data: data, encoding: .utf8)
+        {
+            DispatchQueue.main.async {
+                [unowned self] in
                 // MAGIC HAPPENS HERE //
                 print("Received string: \(inputString)")
                 self.receiveNetworkEvent(input: inputString)
@@ -38,8 +43,10 @@ class MainMenuViewController: UIViewController, MCSessionDelegate, MCBrowserView
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "LaunchGameSegue") {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if (segue.identifier == "LaunchGameSegue")
+        {
             (segue.destination as! GameViewController).mainMenu = self
         }
     }
@@ -73,7 +80,8 @@ class MainMenuViewController: UIViewController, MCSessionDelegate, MCBrowserView
     }
 
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
 
         peerID = MCPeerID(displayName: UIDevice.current.name)
@@ -85,35 +93,47 @@ class MainMenuViewController: UIViewController, MCSessionDelegate, MCBrowserView
         startHosting(action: nil)
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func myUnwindAction(unwindSegue: UIStoryboardSegue) {
+    @IBAction func myUnwindAction(unwindSegue: UIStoryboardSegue)
+    {
     }
     
     // REQUIRED FUNCTIONS FOR DELEGATES //
     
-    func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
+    func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID)
+    {
+        // Empty
     }
     
-    func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) {
+    func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress)
+    {
+        // Empty
     }
     
-    func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL, withError error: Error?) {
+    func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL, withError error: Error?)
+    {
+        // Empty
     }
     
-    func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController) {
+    func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController)
+    {
         dismiss(animated: true)
     }
     
-    func browserViewControllerWasCancelled(_ browserViewController: MCBrowserViewController) {
+    func browserViewControllerWasCancelled(_ browserViewController: MCBrowserViewController)
+    {
         dismiss(animated: true)
     }
     
-    func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
-        switch state {
+    func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState)
+    {
+        switch state
+        {
         case MCSessionState.connected:
             print("Connected: \(peerID.displayName)")
         case MCSessionState.connecting:

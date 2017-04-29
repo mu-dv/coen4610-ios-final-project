@@ -81,20 +81,30 @@ class GameScene: SKScene, SKPhysicsContactDelegate
     var gameState : GameState = GameState.NEWGAME
     var gameCounter : Int = 0
     
+    
     // Game Objects
     var enemies = SKNode()
-    let player = Player(imageNamed: "player")
+    let player = Player(imageNamed: "playership_1")
     let curScoreLabel = SKLabelNode(fontNamed: "Courier")
+    
+    // Game Level Variables
+    let enemyFireFrequencyLimit : Int = 8
+    let enemyMoveFrequencyLimit : Int = 32
+    var enemyMoveFrequency : Int = 256
+    var enemyFireFrequency : Int = 128
+    //var enemyRespawnTime : Int = 0
     
     var mainMenu: MainMenuViewController!
    
     override func didMove(to view: SKView)
     {
         
-        backgroundColor = SKColor.white
+        self.backgroundColor = SKColor.white
+        let back = SKSpriteNode(imageNamed: "background")
         
-        physicsWorld.gravity = CGVector.zero
-        physicsWorld.contactDelegate = self
+        self.addChild(back)
+        self.physicsWorld.gravity = CGVector.zero
+        self.physicsWorld.contactDelegate = self
         
         gameState = GameState.NEWGAME;
         gameCounter = 0
@@ -145,6 +155,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate
             self.addChild(curScoreLabel)
             
             // Initialize player
+            player.setScale(0.34)
             player.position = CGPoint(x: self.size.width * 0.5, y: self.size.height * 0.1)
             player.physicsBody = SKPhysicsBody(rectangleOf: player.size)
             player.physicsBody?.isDynamic = true
@@ -153,14 +164,43 @@ class GameScene: SKScene, SKPhysicsContactDelegate
             player.physicsBody?.collisionBitMask = PhysicsCategory.None
             player.lives = 3
             player.mainMenu = mainMenu
+            
+            let playerImages = [ SKTexture(imageNamed: "playership_2"),
+                        SKTexture(imageNamed: "playership_1"),
+                        SKTexture(imageNamed: "playership_3"),
+                        SKTexture(imageNamed: "playership_5"),
+                        SKTexture(imageNamed: "playership_4") ]
+            let playerIdle = SKAction.sequence([
+                    SKAction.animate(with: playerImages, timePerFrame: 0.15),
+                    SKAction.wait(forDuration: 0.05)
+                    ])
+            
+            player.run(SKAction.repeatForever(playerIdle))
+            
             self.addChild(player)
+            
+            
+            let enemyImages = [ SKTexture(imageNamed: "enemyship_0"),
+                                SKTexture(imageNamed: "enemyship_1"),
+                                SKTexture(imageNamed: "enemyship_7"),
+                                SKTexture(imageNamed: "enemyship_3"),
+                                SKTexture(imageNamed: "enemyship_8"),
+                                SKTexture(imageNamed: "enemyship_5"),
+                                SKTexture(imageNamed: "enemyship_6"),
+                                SKTexture(imageNamed: "enemyship_2"),
+                                SKTexture(imageNamed: "enemyship_4")  ]
+            
+            
+            
             
             // Create the intial number of enemies
             for y in 6..<10
             {
-                for x in 1..<10
+                for x in 4..<17
                 {
-                    let enemy = Alien(imageNamed: "monster")
+                    let enemy = Alien(imageNamed: "enemyship_0")
+                    enemy.setScale(0.20)
+                    enemy.zRotation = CGFloat.pi;
                     
                     enemy.physicsBody = SKPhysicsBody(rectangleOf: enemy.size)
                     enemy.physicsBody?.isDynamic = true
@@ -168,13 +208,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate
                     enemy.physicsBody?.contactTestBitMask = PhysicsCategory.PlayerBullet
                     enemy.physicsBody?.collisionBitMask = PhysicsCategory.None
                     
-                    let newX = self.size.width * CGFloat(x) * (1.0/10.0)
+                    let enemyIdle = SKAction.sequence([
+                        SKAction.animate(with: enemyImages, timePerFrame: TimeInterval(random(min: 0.11, max: 0.2))),
+                        SKAction.wait(forDuration: TimeInterval(random(min: 0.01, max: 0.05)))
+                        ])
+                    
+                    let newX = self.size.width * CGFloat(x) * (1.0/20.0)
                     let newY = self.size.height * CGFloat(y) * (1.0/10.0)
                     
                     enemy.position = CGPoint(x: newX, y: newY)
                     
-                    //self.addChild(enemy)
+                    enemy.run(SKAction.repeatForever(enemyIdle))
+                    
                     enemies.addChild(enemy)
+                    
+                    
                     
                     enemyCount += 1
                 }
@@ -190,17 +238,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate
             curScoreLabel.text = "Lives: \(player.lives) Score: \(enemiesDestroyed)"
 
             
-            if ((gameCounter % 16) == 0)
+            if ((gameCounter % enemyFireFrequency) == 0)
             {
                 
                 let shooterIndex = Int(random(min: 0.0, max: CGFloat(enemies.children.count)))
                 var index : Int = 0
                 
+                // iterate through the enemies and find one to shoot stuff
                 for case let enemy as Alien in enemies.children
                 {
                     if (index == shooterIndex)
                     {
-                        // Ask the player to fire a bullet
+                        // Ask the enemy to fire a bullet
                         if let bullet = enemy.shootBullet()
                         {
                             self.addChild(bullet)
@@ -210,20 +259,48 @@ class GameScene: SKScene, SKPhysicsContactDelegate
                     index += 1
                 }
                 
-                // check to see if the user should fire
-                if (mainMenu.fire)
+                if (enemyFireFrequency > enemyFireFrequencyLimit)
                 {
-                    self.addChild(player.shootBullet()!)
+                    enemyFireFrequency -= 1
                 }
             }
             
-            // Move the enemies down slightly every so often
-            if ((gameCounter % 128) == 0)
+            // check to see if the user should fire
+            if (mainMenu.fire)
             {
-                let actionMove = SKAction.moveBy(x: 0.0, y: -15.0, duration: TimeInterval(1.0))
-                enemies.run(SKAction.sequence([actionMove]))
+                self.addChild(player.shootBullet()!)
             }
             
+            // Move the enemies down slightly every so often
+            if ((gameCounter % enemyMoveFrequency) == 0)
+            {
+                let moveType = Int(random(min: 0.0, max: 3.0))
+                var actionMove = SKAction.moveBy(x: 0.0, y: -15.0, duration: TimeInterval(1.0))
+                
+                switch (moveType)
+                {
+                case 0:
+                    actionMove = SKAction.moveBy(x: -30.0, y: 0.0, duration: TimeInterval(1.0))
+                    break
+                case 1:
+                    actionMove = SKAction.moveBy(x: 30.0, y: 0.0, duration: TimeInterval(1.0))
+                    break
+                case 2:
+                    actionMove = SKAction.moveBy(x: 0.0, y: -15.0, duration: TimeInterval(1.0))
+                    break
+                default:
+                    break
+                }
+    
+                enemies.run(SKAction.sequence([actionMove]))
+                
+                if (enemyMoveFrequency > enemyMoveFrequencyLimit)
+                {
+                    enemyMoveFrequency -= 2
+                }
+            }
+            
+            // Win and lose states
             if (enemiesDestroyed >= enemyCount)
             {
                 let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
