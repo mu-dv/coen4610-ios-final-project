@@ -19,9 +19,7 @@ class MainMenuViewController: UIViewController, MCSessionDelegate, MCBrowserView
     @IBOutlet weak var connectButton: UIButton!
     @IBOutlet weak var debugText    : UILabel!
     
-    // CURRECT DIRECTION AND FIRE STATUS //
-    var direction: Direction = Direction.NONE
-    var fire     : Bool = false
+    var manager: GameManagerViewController!
     
     func startHosting(action: UIAlertAction!)
     {
@@ -47,7 +45,7 @@ class MainMenuViewController: UIViewController, MCSessionDelegate, MCBrowserView
     {
         if (segue.identifier == "LaunchGameSegue")
         {
-            (segue.destination as! GameViewController).mainMenu = self
+            manager = (segue.destination as! GameManagerViewController)
         }
     }
     
@@ -55,27 +53,27 @@ class MainMenuViewController: UIViewController, MCSessionDelegate, MCBrowserView
     {
         if (input == "LeftDown")
         {
-            direction = Direction.LEFT
+            manager.direction = Direction.LEFT
         }
         if (input == "LeftUp")
         {
-            direction = Direction.NONE
+            manager.direction = Direction.NONE
         }
         if (input == "RightDown")
         {
-            direction = Direction.RIGHT
+            manager.direction = Direction.RIGHT
         }
         if (input == "RightUp")
         {
-            direction = Direction.NONE
+            manager.direction = Direction.NONE
         }
         if (input == "FireDown")
         {
-            fire = true
+            manager.fire = true
         }
         if (input == "FireUp")
         {
-            fire = false
+            manager.fire = false
         }
     }
 
@@ -136,10 +134,13 @@ class MainMenuViewController: UIViewController, MCSessionDelegate, MCBrowserView
         {
         case MCSessionState.connected:
             print("Connected: \(peerID.displayName)")
+            debugText.text = "\(peerID.displayName) has connected."
         case MCSessionState.connecting:
             print("Connecting: \(peerID.displayName)")
+            debugText.text = "\(peerID.displayName) is connecting..."
         case MCSessionState.notConnected:
             print("Not Connected: \(peerID.displayName)")
+            debugText.text = "Waiting for controller to connect..."
         }
     }
 }

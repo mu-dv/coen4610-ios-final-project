@@ -98,7 +98,7 @@
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
-                                    <segue destination="pOY-yU-gNm" kind="show" identifier="LaunchGameSegue" id="WVa-iV-7h2"/>
+                                    <segue destination="hpS-ip-QUa" kind="show" identifier="LaunchGameSegue" id="fe7-dh-QYZ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -112,10 +112,27 @@
             </objects>
             <point key="canvasLocation" x="2302" y="74"/>
         </scene>
+        <!--Game Manager View Controller-->
+        <scene sceneID="JDp-83-WSM">
+            <objects>
+                <viewController id="hpS-ip-QUa" customClass="GameManagerViewController" customModule="AstroidsMarquette" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TDL-cO-Ykz"/>
+                        <viewControllerLayoutGuide type="bottom" id="iZN-oN-ZgX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ceb-Xx-ecT">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bXb-Zi-Kx5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4713" y="74"/>
+        </scene>
         <!--Game-->
         <scene sceneID="Aml-FS-u5T">
             <objects>
-                <viewController id="pOY-yU-gNm" userLabel="Game" customClass="GameViewController" customModule="AstroidsMarquette" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pOY-yU-gNm" userLabel="Game" customClass="GameViewController" customModule="AstroidsMarquette" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Gz9-VY-u07"/>
                         <viewControllerLayoutGuide type="bottom" id="V2l-cD-T2k"/>
@@ -127,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JEx-7v-2gw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4690" y="74"/>
+            <point key="canvasLocation" x="6828" y="75"/>
         </scene>
         <!--Highscore Name-->
         <scene sceneID="0Pn-lg-pwj">
@@ -176,6 +193,7 @@
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="submitButtonAction:" destination="nNC-2A-Xwo" eventType="primaryActionTriggered" id="0j3-Hi-pVC"/>
+                                    <segue destination="QFb-e5-eJ7" kind="unwind" unwindAction="myUnwindActionWithUnwindSegue:" id="UfR-LK-mG6"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -186,7 +204,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i7X-O0-hyG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5433" y="1455"/>
+            <point key="canvasLocation" x="5831" y="1455"/>
         </scene>
         <!--Highscores-->
         <scene sceneID="y50-NG-4vZ">

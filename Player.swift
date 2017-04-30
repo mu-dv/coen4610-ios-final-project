@@ -19,7 +19,7 @@ class Player : SKSpriteNode
     let moveAmt : CGFloat = 30.0
     var lives : Int = 0
     
-    var mainMenu: MainMenuViewController!
+    var manager: GameManagerViewController!
     
     func shootBullet() -> SKSpriteNode?
     {
@@ -94,11 +94,11 @@ class Player : SKSpriteNode
     
     func update(size: CGSize)
     {
-        if (mainMenu.direction == Direction.LEFT)
+        if (manager.direction == Direction.LEFT)
         {
             position.x -= moveAmt
         }
-        else if (mainMenu.direction == Direction.RIGHT)
+        else if (manager.direction == Direction.RIGHT)
         {
             position.x += moveAmt
         }

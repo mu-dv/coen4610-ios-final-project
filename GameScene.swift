@@ -106,11 +106,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate
     var enemyFireFrequency : Int = 128
     //var enemyRespawnTime : Int = 0
     
-    var mainMenu: MainMenuViewController!
+    var manager: GameManagerViewController!
    
     override func didMove(to view: SKView)
     {
-        
         self.backgroundColor = SKColor.white
         let back = SKSpriteNode(imageNamed: "background")
         
@@ -169,7 +168,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate
             player.physicsBody?.contactTestBitMask = PhysicsCategory.EnemyBullet
             player.physicsBody?.collisionBitMask = PhysicsCategory.None
             player.lives = 3
-            player.mainMenu = mainMenu
+            player.manager = manager
             
             let playerImages = [ SKTexture(imageNamed: "playership_2"),
                         SKTexture(imageNamed: "playership_1"),
@@ -272,10 +271,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate
             }
             
             // check to see if the user should fire
-            if (mainMenu.fire)
+            if (manager.fire)
             {
                 self.addChild(player.shootBullet()!)
-                mainMenu.fire = false
+                manager.fire = false
             }
             
             // Move the enemies down slightly every so often
@@ -316,15 +315,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate
             }
             else if (player.lives <= 0)
             {
-                let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
-                let gameOverScene = GameOverScene(size: self.size, won: false, score: score)
-                self.view?.presentScene(gameOverScene, transition: reveal)
+                // player is dead
+                //let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
+                //let gameOverScene = GameOverScene(size: self.size, won: false, score: score)
+                //self.view?.presentScene(gameOverScene, transition: reveal)
+                
+                self.removeAllActions()
+                self.removeAllChildren()
+                manager.playerEnded(score: score)
             }
             
             player.update(size: self.size)
             
             break
-        case .ENDGAME:
+        case GameState.ENDGAME:
             //do nothing
             break
         }

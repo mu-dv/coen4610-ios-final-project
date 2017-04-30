@@ -11,23 +11,26 @@ import SpriteKit
 
 class GameViewController: UIViewController
 {
-    var mainMenu: MainMenuViewController!
+    var manager: GameManagerViewController!
+    var skView: SKView!
     
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
-        let scene = GameScene(size: view.bounds.size)
-        let skView = view as! SKView
-        skView.showsFPS = true
-        skView.showsNodeCount = true
-        skView.ignoresSiblingOrder = true
-        scene.scaleMode = .resizeFill
-        scene.mainMenu = mainMenu
-        skView.presentScene(scene)
-    }
+    var v: UIView!
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("APPEARING")
+    var t: Bool = true
+    
+    override func viewDidLoad() {
+        if (t) {
+            super.viewDidLoad()
+            v = self.view
+            t = false
+            let scene = GameScene(size: view.bounds.size)
+            skView = view as! SKView
+            skView.showsFPS = true
+            skView.showsNodeCount = true
+            skView.ignoresSiblingOrder = true
+            scene.scaleMode = .resizeFill
+            scene.manager = manager
+            skView.presentScene(scene)
+        }
     }
 }

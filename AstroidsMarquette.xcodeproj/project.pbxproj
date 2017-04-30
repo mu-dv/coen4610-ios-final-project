@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D92C89351EB007CD002FFE51 /* RemoteControllerActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92C89341EB007CD002FFE51 /* RemoteControllerActions.swift */; };
+		D93401AA1EB69733002C28E2 /* GameManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93401A91EB69733002C28E2 /* GameManagerViewController.swift */; };
 		D93C115F1E944376002C8556 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93C115E1E944376002C8556 /* AppDelegate.swift */; };
 		D93C11611E944376002C8556 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93C11601E944376002C8556 /* LaunchScreenViewController.swift */; };
 		D93C11641E944376002C8556 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D93C11621E944376002C8556 /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		D92C89341EB007CD002FFE51 /* RemoteControllerActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteControllerActions.swift; sourceTree = "<group>"; };
+		D93401A91EB69733002C28E2 /* GameManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameManagerViewController.swift; sourceTree = "<group>"; };
 		D93C115B1E944376002C8556 /* AstroidsMarquette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstroidsMarquette.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D93C115E1E944376002C8556 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D93C11601E944376002C8556 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				D9AEE3671EB2A73200826964 /* GameOverScene.swift */,
 				D9AEE3681EB2A73200826964 /* GameScene.swift */,
 				D9AEE3691EB2A73200826964 /* GameViewController.swift */,
+				D93401A91EB69733002C28E2 /* GameManagerViewController.swift */,
 				D9AEE36A1EB2A73200826964 /* Player.swift */,
 				D93C115E1E944376002C8556 /* AppDelegate.swift */,
 				D93C11601E944376002C8556 /* LaunchScreenViewController.swift */,
@@ -214,6 +217,7 @@
 				D92C89351EB007CD002FFE51 /* RemoteControllerActions.swift in Sources */,
 				D93C11611E944376002C8556 /* LaunchScreenViewController.swift in Sources */,
 				D9AEE36B1EB2A73200826964 /* Alien.swift in Sources */,
+				D93401AA1EB69733002C28E2 /* GameManagerViewController.swift in Sources */,
 				D93C115F1E944376002C8556 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

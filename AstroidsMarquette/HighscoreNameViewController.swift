@@ -24,7 +24,7 @@ class HighscoreNameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // assuming highscore was set before the view loaded
+        self.view.backgroundColor = UIColor.black
         
     }
 
