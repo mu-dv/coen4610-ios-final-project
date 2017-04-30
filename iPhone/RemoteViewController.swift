@@ -89,6 +89,8 @@ class RemoteViewController: UIViewController, MCSessionDelegate, MCBrowserViewCo
             DispatchQueue.main.async { [unowned self] in
                 print("Received string: \(str)")
             }
+            
+            
         }
     }
     
