@@ -40,49 +40,13 @@
                     </view>
                     <connections>
                         <outlet property="gameView" destination="9tW-Ed-pwD" id="Xih-Cq-ANY"/>
-                        <outlet property="sendText" destination="00C-pd-hb3" id="41T-Jb-Puk"/>
                         <outlet property="setupView" destination="zSv-a3-G5s" id="gDg-Mr-f9K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="A8K-JI-Prm" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="117.39130434782609" y="121.73913043478262"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="MpO-Tg-kgS">
-            <objects>
-                <viewController modalTransitionStyle="flipHorizontal" id="hcQ-P0-s7g" customClass="ViewController" customModule="InvadersController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="RJm-fl-IHw"/>
-                        <viewControllerLayoutGuide type="bottom" id="eCa-hF-9WN"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="VFh-kd-ben">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GIW-yM-g2Y">
-                                <rect key="frame" x="317" y="126" width="106" height="106"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="right_button1"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zce-FK-Ace">
-                                <rect key="frame" x="58" y="126" width="106" height="106"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="left_button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5bc-je-dvq">
-                                <rect key="frame" x="528" y="126" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="red_button"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="UcB-XC-4oD"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bft-mC-pkI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1073.6131934032985" y="116"/>
         </scene>
         <!--GameUI-->
         <scene sceneID="EIh-1h-Bbk">
@@ -97,10 +61,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5i-oY-Nio">
-                                <rect key="frame" x="0.0" y="0.0" width="256" height="414"/>
+                                <rect key="frame" x="0.0" y="0.0" width="256" height="366"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.76369274013493849" green="1" blue="0.81881288417705189" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Move Left"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Move Left">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="moveLeftDownAction:" destination="jn1-GU-xrq" eventType="touchDown" id="IQR-xs-FII"/>
                                     <action selector="moveLeftUpAction:" destination="jn1-GU-xrq" eventType="touchUpOutside" id="clg-0d-cBP"/>
@@ -108,10 +75,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RUK-mh-SzR">
-                                <rect key="frame" x="480" y="0.0" width="256" height="414"/>
+                                <rect key="frame" x="480" y="0.0" width="256" height="366"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.76369274009999999" green="1" blue="0.81881288419999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Move Right"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Move Right">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="moveRightDownAction:" destination="jn1-GU-xrq" eventType="touchDown" id="7Fx-c7-fno"/>
                                     <action selector="moveRightUpAction:" destination="jn1-GU-xrq" eventType="touchUpInside" id="HzJ-YR-QKx"/>
@@ -119,14 +89,26 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZq-NT-h1B">
-                                <rect key="frame" x="264" y="0.0" width="208" height="414"/>
+                                <rect key="frame" x="264" y="0.0" width="208" height="366"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.70752389456118592" blue="0.68941022437740718" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Fire"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="FIRE!">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="fireDownAction:" destination="jn1-GU-xrq" eventType="touchDown" id="0d8-KD-GIU"/>
                                     <action selector="fireUpAction:" destination="jn1-GU-xrq" eventType="touchUpOutside" id="0Ph-kI-adR"/>
                                     <action selector="fireUpAction:" destination="jn1-GU-xrq" eventType="touchUpInside" id="C9j-xp-gJa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3o-ID-0tX">
+                                <rect key="frame" x="335" y="376" width="66" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="A8K-JI-Prm" kind="unwind" unwindAction="prepareForUnwindWithSegue:" id="buJ-9A-yCY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -156,25 +138,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XfN-Y6-1Kj">
-                                <rect key="frame" x="661" y="138" width="40" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Send!"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Send:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONS-4J-PYO">
-                                <rect key="frame" x="431" y="142" width="45" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="00C-pd-hb3">
-                                <rect key="frame" x="484" y="137" width="148" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Controller" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wA-xy-ZCC">
                                 <rect key="frame" x="285" y="78" width="166" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -183,7 +146,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFW-xC-RZo">
-                                <rect key="frame" x="99" y="127" width="156" height="51"/>
+                                <rect key="frame" x="290" y="182" width="156" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Connect"/>
@@ -203,9 +166,4 @@
             <point key="canvasLocation" x="165" y="-643"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="left_button" width="857" height="845"/>
-        <image name="red_button" width="600" height="600"/>
-        <image name="right_button1" width="857" height="845"/>
-    </resources>
 </document>

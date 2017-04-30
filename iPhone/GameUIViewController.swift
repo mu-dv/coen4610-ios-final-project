@@ -21,6 +21,10 @@ class GameUIViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
+        
+    }
+    
     @IBAction func moveLeftDownAction(_ sender: Any) {
         (parent as! RemoteViewController).sendRemoteControllerCommand(command: RemoteControllerAction.MoveLeftDown)
     }
