@@ -20,6 +20,7 @@ class GameManagerViewController: UIViewController {
         
         let highscoreController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Highscore Name")
         (highscoreController as! HighscoreNameViewController).highscore = score
+        (highscoreController as! HighscoreNameViewController).manager = self
         self.present(highscoreController, animated: true, completion: nil)
     }
     

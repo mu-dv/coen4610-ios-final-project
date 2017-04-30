@@ -100,12 +100,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate
     
     // Game Level Variables
     let enemyFireFrequencyLimit : Int = 8
-    let enemyMoveFrequencyLimit : Int = 32
+    let enemyMoveFrequencyLimit : Int = 16
     let enemyRespawnFrequencyLimit : Int = 8
     var enemyMoveFrequency : Int = 256
-    var enemyFireFrequency : Int = 128
+    var enemyFireFrequency : Int = 32
     var enemyRespawnFrequency : Int = 64
-    
     
     var manager: GameManagerViewController!
    
@@ -159,28 +158,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate
             self.addChild(curScoreLabel)
             
             // Initialize player
-            player.setScale(0.34)
-            player.position = CGPoint(x: self.size.width * 0.5, y: self.size.height * 0.1)
-            player.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: player.size.width*0.4, height: player.size.height*0.7))
-            player.physicsBody?.isDynamic = true
-            player.physicsBody?.categoryBitMask = PhysicsCategory.Player
-            player.physicsBody?.contactTestBitMask = PhysicsCategory.EnemyBullet
-            player.physicsBody?.collisionBitMask = PhysicsCategory.None
-            player.lives = 3
-            player.manager = manager
-            
-            let playerImages = [ SKTexture(imageNamed: "playership_2"),
-                        SKTexture(imageNamed: "playership_1"),
-                        SKTexture(imageNamed: "playership_3"),
-                        SKTexture(imageNamed: "playership_5"),
-                        SKTexture(imageNamed: "playership_4") ]
-            let playerIdle = SKAction.sequence([
-                    SKAction.animate(with: playerImages, timePerFrame: 0.15),
-                    SKAction.wait(forDuration: 0.05)
-                    ])
-            
-            player.run(SKAction.repeatForever(playerIdle))
-            
+            initializePlayer()
             self.addChild(player)
             
             // Respawn enemies
@@ -297,6 +275,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate
                 
                 self.removeAllActions()
                 self.removeAllChildren()
+                self.removeFromParent()
                 manager.playerEnded(score: score)
             }
             
@@ -319,7 +298,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate
         player.physicsBody?.contactTestBitMask = PhysicsCategory.EnemyBullet
         player.physicsBody?.collisionBitMask = PhysicsCategory.None
         player.lives = 3
-        player.mainMenu = mainMenu
+        player.manager = manager
         
         let playerImages = [ SKTexture(imageNamed: "playership_2"),
                              SKTexture(imageNamed: "playership_1"),

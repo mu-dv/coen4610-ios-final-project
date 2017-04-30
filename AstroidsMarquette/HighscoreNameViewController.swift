@@ -11,11 +11,14 @@ import UIKit
 class HighscoreNameViewController: UIViewController {
     
     var highscore: Int = 0
+    var manager: GameManagerViewController!
     
     @IBOutlet weak var highscoreLabel: UILabel!
 
     @IBAction func submitButtonAction(_ sender: Any) {
         // TODO: do network things here
+        
+        manager.startGame()
         
         // dismiss viewcontroller
         dismiss(animated: true, completion: nil)

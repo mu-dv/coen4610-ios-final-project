@@ -149,7 +149,7 @@
         <!--Highscore Name-->
         <scene sceneID="0Pn-lg-pwj">
             <objects>
-                <viewController storyboardIdentifier="Highscore Name" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nNC-2A-Xwo" userLabel="Highscore Name" customClass="HighscoreNameViewController" customModule="AstroidsMarquette" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Highscore Name" modalPresentationStyle="overFullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nNC-2A-Xwo" userLabel="Highscore Name" customClass="HighscoreNameViewController" customModule="AstroidsMarquette" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Bfh-dE-zCE"/>
                         <viewControllerLayoutGuide type="bottom" id="aDi-fs-UeO"/>
