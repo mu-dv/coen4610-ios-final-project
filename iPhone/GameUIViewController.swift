@@ -21,8 +21,9 @@ class GameUIViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
-        
+    @IBAction func backButtonAction(_ sender: Any) {
+        (parent as! RemoteViewController).hideGameUI(hide: true)
+        (parent as! RemoteViewController).hideSetupUI(hide: false)
     }
     
     @IBAction func moveLeftDownAction(_ sender: Any) {

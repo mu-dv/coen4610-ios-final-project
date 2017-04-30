@@ -78,7 +78,7 @@ struct PhysicsCategory
 
 enum GameState
 {
-    case NEWGAME, ACTIVEGAME
+    case NEWGAME, ACTIVEGAME, ENDGAME
 }
 
 
@@ -323,6 +323,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate
             
             player.update(size: self.size)
             
+            break
+        case .ENDGAME:
+            //do nothing
             break
         }
     }

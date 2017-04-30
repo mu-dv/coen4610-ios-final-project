@@ -21,15 +21,9 @@ class AboutViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func callButtonAction(_ sender: Any) {
+        let highscoreController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Highscore Name")
+        (highscoreController as! HighscoreNameViewController).highscore = 10
+        self.present(highscoreController, animated: true, completion: nil)
     }
-    */
-
 }

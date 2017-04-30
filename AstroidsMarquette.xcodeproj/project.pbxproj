@@ -13,6 +13,7 @@
 		D93C11641E944376002C8556 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D93C11621E944376002C8556 /* Main.storyboard */; };
 		D93C11661E944376002C8556 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D93C11651E944376002C8556 /* Assets.xcassets */; };
 		D93C116E1E944710002C8556 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93C116D1E944710002C8556 /* AboutViewController.swift */; };
+		D99259861EB68B7400FDA280 /* HighscoreNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99259851EB68B7400FDA280 /* HighscoreNameViewController.swift */; };
 		D9AEE36B1EB2A73200826964 /* Alien.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AEE3661EB2A73200826964 /* Alien.swift */; };
 		D9AEE36C1EB2A73200826964 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AEE3671EB2A73200826964 /* GameOverScene.swift */; };
 		D9AEE36D1EB2A73200826964 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AEE3681EB2A73200826964 /* GameScene.swift */; };
@@ -39,6 +40,7 @@
 		D93C11651E944376002C8556 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D93C11671E944376002C8556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D93C116D1E944710002C8556 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		D99259851EB68B7400FDA280 /* HighscoreNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighscoreNameViewController.swift; sourceTree = "<group>"; };
 		D9AEE3661EB2A73200826964 /* Alien.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alien.swift; path = ../Alien.swift; sourceTree = "<group>"; };
 		D9AEE3671EB2A73200826964 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameOverScene.swift; path = ../GameOverScene.swift; sourceTree = "<group>"; };
 		D9AEE3681EB2A73200826964 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameScene.swift; path = ../GameScene.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				D93C115E1E944376002C8556 /* AppDelegate.swift */,
 				D93C11601E944376002C8556 /* LaunchScreenViewController.swift */,
 				D93C11621E944376002C8556 /* Main.storyboard */,
+				D99259851EB68B7400FDA280 /* HighscoreNameViewController.swift */,
 				D9AEE3701EB2A90400826964 /* HighscoresViewController.swift */,
 				D9FD92261EAFF80700C4CB0E /* MainMenuViewController.swift */,
 				D92C89341EB007CD002FFE51 /* RemoteControllerActions.swift */,
@@ -204,6 +207,7 @@
 				D9AEE36E1EB2A73200826964 /* GameViewController.swift in Sources */,
 				D9FD92271EAFF80700C4CB0E /* MainMenuViewController.swift in Sources */,
 				D9AEE36C1EB2A73200826964 /* GameOverScene.swift in Sources */,
+				D99259861EB68B7400FDA280 /* HighscoreNameViewController.swift in Sources */,
 				D9AEE36D1EB2A73200826964 /* GameScene.swift in Sources */,
 				D93C116E1E944710002C8556 /* AboutViewController.swift in Sources */,
 				D9AEE3711EB2A90400826964 /* HighscoresViewController.swift in Sources */,

@@ -12,7 +12,7 @@ import SpriteKit
 class GameOverScene: SKScene
 {
     
-    init(size: CGSize, won:Bool, score: Int)
+    init(size: CGSize, won: Bool, score: Int)
     {
         
         super.init(size: size)
@@ -28,7 +28,7 @@ class GameOverScene: SKScene
         label.position = CGPoint(x: size.width/2, y: size.height/2)
         addChild(label)
         
-
+        
         
         run(SKAction.sequence([
             SKAction.wait(forDuration: 3.0),

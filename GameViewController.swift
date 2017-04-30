@@ -25,4 +25,9 @@ class GameViewController: UIViewController
         scene.mainMenu = mainMenu
         skView.presentScene(scene)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("APPEARING")
+    }
 }

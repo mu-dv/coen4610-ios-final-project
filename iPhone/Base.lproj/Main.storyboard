@@ -46,7 +46,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <exit id="A8K-JI-Prm" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="117.39130434782609" y="121.73913043478262"/>
         </scene>
@@ -112,7 +111,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="A8K-JI-Prm" kind="unwind" unwindAction="prepareForUnwindWithSegue:" id="buJ-9A-yCY"/>
+                                    <action selector="backButtonAction:" destination="jn1-GU-xrq" eventType="touchUpInside" id="hzT-n1-iSP"/>
                                 </connections>
                             </button>
                         </subviews>
