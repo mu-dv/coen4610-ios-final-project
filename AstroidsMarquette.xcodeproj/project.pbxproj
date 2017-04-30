@@ -19,9 +19,15 @@
 		D9AEE36E1EB2A73200826964 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AEE3691EB2A73200826964 /* GameViewController.swift */; };
 		D9AEE36F1EB2A73200826964 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AEE36A1EB2A73200826964 /* Player.swift */; };
 		D9AEE3711EB2A90400826964 /* HighscoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AEE3701EB2A90400826964 /* HighscoresViewController.swift */; };
-		D9AEE3751EB2AE0200826964 /* background-music-aac.caf in Resources */ = {isa = PBXBuildFile; fileRef = D9AEE3731EB2AE0200826964 /* background-music-aac.caf */; };
-		D9AEE3761EB2AE0200826964 /* pew-pew-lei.caf in Resources */ = {isa = PBXBuildFile; fileRef = D9AEE3741EB2AE0200826964 /* pew-pew-lei.caf */; };
 		D9FD92271EAFF80700C4CB0E /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FD92261EAFF80700C4CB0E /* MainMenuViewController.swift */; };
+		FAFDD6691EB672FF001B6BC7 /* playerhit_01.wav in Resources */ = {isa = PBXBuildFile; fileRef = FAFDD6651EB672FF001B6BC7 /* playerhit_01.wav */; };
+		FAFDD66A1EB672FF001B6BC7 /* playerhit_02.wav in Resources */ = {isa = PBXBuildFile; fileRef = FAFDD6661EB672FF001B6BC7 /* playerhit_02.wav */; };
+		FAFDD66B1EB672FF001B6BC7 /* playerhit_03.wav in Resources */ = {isa = PBXBuildFile; fileRef = FAFDD6671EB672FF001B6BC7 /* playerhit_03.wav */; };
+		FAFDD66C1EB672FF001B6BC7 /* playerhit_04.wav in Resources */ = {isa = PBXBuildFile; fileRef = FAFDD6681EB672FF001B6BC7 /* playerhit_04.wav */; };
+		FAFDD6711EB6733D001B6BC7 /* enemyfire_01.wav in Resources */ = {isa = PBXBuildFile; fileRef = FAFDD66D1EB6733D001B6BC7 /* enemyfire_01.wav */; };
+		FAFDD6721EB6733D001B6BC7 /* enemyfire_02.wav in Resources */ = {isa = PBXBuildFile; fileRef = FAFDD66E1EB6733D001B6BC7 /* enemyfire_02.wav */; };
+		FAFDD6731EB6733D001B6BC7 /* enemyfire_03.wav in Resources */ = {isa = PBXBuildFile; fileRef = FAFDD66F1EB6733D001B6BC7 /* enemyfire_03.wav */; };
+		FAFDD6741EB6733D001B6BC7 /* enemyfire_04.wav in Resources */ = {isa = PBXBuildFile; fileRef = FAFDD6701EB6733D001B6BC7 /* enemyfire_04.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,9 +45,15 @@
 		D9AEE3691EB2A73200826964 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = ../GameViewController.swift; sourceTree = "<group>"; };
 		D9AEE36A1EB2A73200826964 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = ../Player.swift; sourceTree = "<group>"; };
 		D9AEE3701EB2A90400826964 /* HighscoresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighscoresViewController.swift; sourceTree = "<group>"; };
-		D9AEE3731EB2AE0200826964 /* background-music-aac.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "background-music-aac.caf"; sourceTree = "<group>"; };
-		D9AEE3741EB2AE0200826964 /* pew-pew-lei.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pew-pew-lei.caf"; sourceTree = "<group>"; };
 		D9FD92261EAFF80700C4CB0E /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		FAFDD6651EB672FF001B6BC7 /* playerhit_01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = playerhit_01.wav; sourceTree = "<group>"; };
+		FAFDD6661EB672FF001B6BC7 /* playerhit_02.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = playerhit_02.wav; sourceTree = "<group>"; };
+		FAFDD6671EB672FF001B6BC7 /* playerhit_03.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = playerhit_03.wav; sourceTree = "<group>"; };
+		FAFDD6681EB672FF001B6BC7 /* playerhit_04.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = playerhit_04.wav; sourceTree = "<group>"; };
+		FAFDD66D1EB6733D001B6BC7 /* enemyfire_01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = enemyfire_01.wav; sourceTree = "<group>"; };
+		FAFDD66E1EB6733D001B6BC7 /* enemyfire_02.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = enemyfire_02.wav; sourceTree = "<group>"; };
+		FAFDD66F1EB6733D001B6BC7 /* enemyfire_03.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = enemyfire_03.wav; sourceTree = "<group>"; };
+		FAFDD6701EB6733D001B6BC7 /* enemyfire_04.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = enemyfire_04.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +108,14 @@
 		D9AEE3721EB2AE0200826964 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				D9AEE3731EB2AE0200826964 /* background-music-aac.caf */,
-				D9AEE3741EB2AE0200826964 /* pew-pew-lei.caf */,
+				FAFDD6651EB672FF001B6BC7 /* playerhit_01.wav */,
+				FAFDD6661EB672FF001B6BC7 /* playerhit_02.wav */,
+				FAFDD6671EB672FF001B6BC7 /* playerhit_03.wav */,
+				FAFDD6681EB672FF001B6BC7 /* playerhit_04.wav */,
+				FAFDD66D1EB6733D001B6BC7 /* enemyfire_01.wav */,
+				FAFDD66E1EB6733D001B6BC7 /* enemyfire_02.wav */,
+				FAFDD66F1EB6733D001B6BC7 /* enemyfire_03.wav */,
+				FAFDD6701EB6733D001B6BC7 /* enemyfire_04.wav */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -163,9 +181,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				D93C11661E944376002C8556 /* Assets.xcassets in Resources */,
+				FAFDD6721EB6733D001B6BC7 /* enemyfire_02.wav in Resources */,
+				FAFDD66A1EB672FF001B6BC7 /* playerhit_02.wav in Resources */,
 				D93C11641E944376002C8556 /* Main.storyboard in Resources */,
-				D9AEE3751EB2AE0200826964 /* background-music-aac.caf in Resources */,
-				D9AEE3761EB2AE0200826964 /* pew-pew-lei.caf in Resources */,
+				FAFDD6711EB6733D001B6BC7 /* enemyfire_01.wav in Resources */,
+				FAFDD66B1EB672FF001B6BC7 /* playerhit_03.wav in Resources */,
+				FAFDD66C1EB672FF001B6BC7 /* playerhit_04.wav in Resources */,
+				FAFDD6731EB6733D001B6BC7 /* enemyfire_03.wav in Resources */,
+				FAFDD6691EB672FF001B6BC7 /* playerhit_01.wav in Resources */,
+				FAFDD6741EB6733D001B6BC7 /* enemyfire_04.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

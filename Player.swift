@@ -16,7 +16,7 @@ enum Direction
     
 class Player : SKSpriteNode
 {
-    let moveAmt : CGFloat = 5.0
+    let moveAmt : CGFloat = 30.0
     var lives : Int = 0
     
     var mainMenu: MainMenuViewController!
@@ -25,9 +25,8 @@ class Player : SKSpriteNode
     {
         // for network usage
         let bullet = SKSpriteNode(imageNamed: "player_bullet")
-        bullet.setScale(0.7)
-        bullet.zRotation = CGFloat.pi
-        bullet.position = self.position
+        bullet.setScale(0.5)
+        bullet.position = self.position + CGPoint (x: 0.0, y: self.size.height/2)
         
         bullet.physicsBody = SKPhysicsBody(circleOfRadius: bullet.size.width/2)
         bullet.physicsBody?.isDynamic = true
@@ -53,9 +52,8 @@ class Player : SKSpriteNode
     {
         // Set up initial location of projectile
         let bullet = SKSpriteNode(imageNamed: "player_bullet")
-        bullet.setScale(0.7)
-        bullet.zRotation = CGFloat.pi
-        bullet.position = self.position
+        bullet.setScale(0.5)
+        bullet.position = self.position + CGPoint (x: 0.0, y: self.size.height/2)
         
         bullet.physicsBody = SKPhysicsBody(circleOfRadius: bullet.size.width/2)
         bullet.physicsBody?.isDynamic = true

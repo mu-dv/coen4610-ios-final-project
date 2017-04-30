@@ -35,8 +35,17 @@ class Alien : SKSpriteNode
         bullet.run(SKAction.sequence([actionMove, actionMoveDone]))
         
         // Play shooting sound
-        run(SKAction.playSoundFileNamed("pew-pew-lei.caf", waitForCompletion: false))
+        //run(SKAction.playSoundFileNamed("pew-pew-lei.caf", waitForCompletion: false))
+        playBulletSound()
         
         return bullet
     }
+    
+    func playBulletSound()
+    {
+        let num = Int(random(min: 1.0, max: 4.0))
+        
+        run(SKAction.playSoundFileNamed("enemyfire_0\(num).wav", waitForCompletion: false))
+    }
+    
 }

@@ -8,17 +8,28 @@
 
 import UIKit
 
-class HighscoresViewController: UIViewController {
+class HighscoresViewController: UIViewController
+{
 
     @IBOutlet weak var highScores: UITextView!
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        highScores.text = getHighscores(url: URL(string: "http://192.168.1.2:8081/score/name/1234")!)
-        // Do any additional setup after loading the view.
+        
+        if let url = URL(string: "http://192.168.1.2:8081/score/name/1234")
+        {
+            highScores.text = getHighscores(url: url)
+        }
+        else
+        {
+            highScores.text = "Unable to connect to server"
+        }
+            // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
