@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-
+// Global functions
 func + (left: CGPoint, right: CGPoint) -> CGPoint
 {
     return CGPoint(x: left.x + right.x, y: left.y + right.y)
@@ -27,6 +27,16 @@ func * (point: CGPoint, scalar: CGFloat) -> CGPoint
 func / (point: CGPoint, scalar: CGFloat) -> CGPoint
 {
     return CGPoint(x: point.x / scalar, y: point.y / scalar)
+}
+
+func random() -> CGFloat
+{
+    return CGFloat(Float(arc4random()) / 0xFFFFFFFF)
+}
+
+func random(min: CGFloat, max: CGFloat) -> CGFloat
+{
+    return random() * (max - min) + min
 }
 
 #if !(arch(x86_64) || arch(arm64))
@@ -76,7 +86,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate
 {
     // Game State variables and constants
     let maxGameCount = 256;
+    //let scorePerEnemy = 10000;
     var enemiesDestroyed = 0
+    var score = 0
     var enemyCount = 0
     var gameState : GameState = GameState.NEWGAME
     var gameCounter : Int = 0
@@ -122,15 +134,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate
         //addChild(backgroundMusic)
     }
     
-    func random() -> CGFloat
-    {
-        return CGFloat(Float(arc4random()) / 0xFFFFFFFF)
-    }
-    
-    func random(min: CGFloat, max: CGFloat) -> CGFloat
-    {
-        return random() * (max - min) + min
-    }
+
     
     
     func gameUpdate()
@@ -140,6 +144,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate
         switch(gameState)
         {
         case GameState.NEWGAME:
+            // Reset score
+            score = 0
             
             enemyCount = 0
             // Clear out all children
@@ -157,7 +163,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate
             // Initialize player
             player.setScale(0.34)
             player.position = CGPoint(x: self.size.width * 0.5, y: self.size.height * 0.1)
-            player.physicsBody = SKPhysicsBody(rectangleOf: player.size)
+            player.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: player.size.width*0.4, height: player.size.height*0.7))
             player.physicsBody?.isDynamic = true
             player.physicsBody?.categoryBitMask = PhysicsCategory.Player
             player.physicsBody?.contactTestBitMask = PhysicsCategory.EnemyBullet
@@ -235,7 +241,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate
             break
         case GameState.ACTIVEGAME:
             
-            curScoreLabel.text = "Lives: \(player.lives) Score: \(enemiesDestroyed)"
+            curScoreLabel.text = "Lives: \(player.lives) Score: \(score)"
 
             
             if ((gameCounter % enemyFireFrequency) == 0)
@@ -269,6 +275,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate
             if (mainMenu.fire)
             {
                 self.addChild(player.shootBullet()!)
+                mainMenu.fire = false
             }
             
             // Move the enemies down slightly every so often
@@ -304,13 +311,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate
             if (enemiesDestroyed >= enemyCount)
             {
                 let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
-                let gameOverScene = GameOverScene(size: self.size, won: true, score: enemiesDestroyed)
+                let gameOverScene = GameOverScene(size: self.size, won: true, score: score)
                 self.view?.presentScene(gameOverScene, transition: reveal)
             }
             else if (player.lives <= 0)
             {
                 let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
-                let gameOverScene = GameOverScene(size: self.size, won: false, score: enemiesDestroyed)
+                let gameOverScene = GameOverScene(size: self.size, won: false, score: score)
                 self.view?.presentScene(gameOverScene, transition: reveal)
             }
             
@@ -328,6 +335,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate
         enemy.removeFromParent()
         
         enemiesDestroyed += 1
+        score += 100
     }
     
     func bulletDidCollideWithPlayer(bullet: SKSpriteNode)
@@ -337,8 +345,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate
         bullet.removeFromParent()
         
         player.lives -= 1
+        
+        // Play hit sound
+        let num = Int(random(min: 1.0, max: 4.0))
+            
+        run(SKAction.playSoundFileNamed("playerhit_0\(num).wav", waitForCompletion: false))
     }
-    
     
     func didBegin(_ contact: SKPhysicsContact)
     {
@@ -384,49 +396,3 @@ class GameScene: SKScene, SKPhysicsContactDelegate
     }
 }
 
-
-
-
-
-/*
- 
- func addMonster()
- {
- 
- // Create sprite
- let monster = SKSpriteNode(imageNamed: "monster")
- 
- monster.physicsBody = SKPhysicsBody(rectangleOf: monster.size) // 1
- monster.physicsBody?.isDynamic = true // 2
- monster.physicsBody?.categoryBitMask = PhysicsCategory.Enemy // 3
- monster.physicsBody?.contactTestBitMask = PhysicsCategory.Projectile // 4
- monster.physicsBody?.collisionBitMask = PhysicsCategory.None // 5
- 
- // Determine where to spawn the monster along the Y axis
- let actualY = random(min: monster.size.height/2, max: size.height - monster.size.height/2)
- 
- // Position the monster slightly off-screen along the right edge,
- // and along a random position along the Y axis as calculated above
- monster.position = CGPoint(x: size.width + monster.size.width/2, y: actualY)
- 
- // Add the monster to the scene
- addChild(monster)
- 
- // Determine speed of the monster
- let actualDuration = random(min: CGFloat(10.0), max: CGFloat(15.0))
- 
- // Create the actions
- let actionMove = SKAction.move(to: CGPoint(x: -monster.size.width/2, y: actualY), duration: TimeInterval(actualDuration))
- let actionMoveDone = SKAction.removeFromParent()
- 
- let loseAction = SKAction.run()
- {
- 
- let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
- let gameOverScene = GameOverScene(size: self.size, won: false)
- self.view?.presentScene(gameOverScene, transition: reveal)
- }
- monster.run(SKAction.sequence([actionMove, loseAction, actionMoveDone]))
- 
- }
- */
