@@ -17,7 +17,7 @@ class HighscoresViewController: UIViewController
     {
         super.viewDidLoad()
         
-        if let url = URL(string: "http://192.168.1.2:8081/score/name/1234")
+        if let url = URL(string: "http://127.0.0.1:8081/score/shit/12145")
         {
             highScores.text = getHighscores(url: url)
         }
@@ -56,6 +56,22 @@ class HighscoresViewController: UIViewController
         {
             // wait until get something back
         }
+        
+        let scores = newStr.components(separatedBy: "\n")
+        var index : Int = 1
+        newStr = ""
+        
+        for scoreEntry in scores
+        {
+            let score = scoreEntry.components(separatedBy: ",")
+            if (score.count < 2)
+            {
+                break
+            }
+            newStr = newStr + "\n\(index): \(score[0]) \(score[1])"
+            index += 1
+        }
+        
         return newStr
     }
     /*

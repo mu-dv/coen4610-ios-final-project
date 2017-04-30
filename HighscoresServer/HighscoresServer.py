@@ -23,7 +23,7 @@ class teamswiftHTTPServer_RequestHandler(BaseHTTPRequestHandler):
         
         strToWrite = ""
         
-        for tmpScore in sorted(highscores):
+        for tmpScore in sorted(highscores, reverse=True):
             strToWrite = strToWrite + highscores[tmpScore] + "," + str(tmpScore) + "\n"
          
         # Write back the sorted highscores
@@ -63,7 +63,7 @@ def run():
     # Server settings
     # Choose port 8080, for port 80, which is normally used for a http server, you need root access
     # You need to modify this address manually to your IPv4 address
-    server_address = ('10.160.5.65', 8081)
+    server_address = ('127.0.0.1', 8081)
     httpd = HTTPServer(server_address, teamswiftHTTPServer_RequestHandler)
     print('running server...')
     httpd.serve_forever()

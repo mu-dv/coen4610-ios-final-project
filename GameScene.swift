@@ -282,18 +282,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate
             if ((gameCounter % enemyMoveFrequency) == 0)
             {
                 let moveType = Int(random(min: 0.0, max: 3.0))
-                var actionMove = SKAction.moveBy(x: 0.0, y: -15.0, duration: TimeInterval(1.0))
+                var actionMove = SKAction.moveBy(x: 0.0, y: -30.0, duration: TimeInterval(1.0))
                 
                 switch (moveType)
                 {
                 case 0:
-                    actionMove = SKAction.moveBy(x: -30.0, y: 0.0, duration: TimeInterval(1.0))
+                    actionMove = SKAction.moveBy(x: -60.0, y: 0.0, duration: TimeInterval(1.0))
                     break
                 case 1:
-                    actionMove = SKAction.moveBy(x: 30.0, y: 0.0, duration: TimeInterval(1.0))
+                    actionMove = SKAction.moveBy(x: 60.0, y: 0.0, duration: TimeInterval(1.0))
                     break
                 case 2:
-                    actionMove = SKAction.moveBy(x: 0.0, y: -15.0, duration: TimeInterval(1.0))
+                    actionMove = SKAction.moveBy(x: 0.0, y: -30.0, duration: TimeInterval(1.0))
                     break
                 default:
                     break
