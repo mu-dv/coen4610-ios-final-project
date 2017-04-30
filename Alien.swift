@@ -18,7 +18,7 @@ class Alien : SKSpriteNode
         let bullet = SKSpriteNode(imageNamed: "enemy_bullet")
         bullet.zRotation = CGFloat.pi
         bullet.setScale(0.5)
-        bullet.position = self.position + CGPoint(x: 0.0, y: -self.size.width/2)
+        bullet.position = self.position + CGPoint(x: 0.0, y: -self.size.width/2) + (self.parent?.position)!
         
         bullet.physicsBody = SKPhysicsBody(circleOfRadius: bullet.size.width/2)
         bullet.physicsBody?.isDynamic = true
@@ -27,7 +27,7 @@ class Alien : SKSpriteNode
         bullet.physicsBody?.collisionBitMask = PhysicsCategory.None
         bullet.physicsBody?.usesPreciseCollisionDetection = true
         
-        let newPos = self.position + CGPoint(x: 0.0, y: -1000)
+        let newPos = self.position + CGPoint(x: 0.0, y: -1000) + (self.parent?.position)!
         
         // Create the actions
         let actionMove = SKAction.move(to: newPos, duration: 4.0)
