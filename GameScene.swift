@@ -260,13 +260,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate
             }
             
             // Win and lose states
-            if (enemiesDestroyed >= enemyCount)
-            {
-                let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
-                let gameOverScene = GameOverScene(size: self.size, won: true, score: score)
-                self.view?.presentScene(gameOverScene, transition: reveal)
-            }
-            else if (player.lives <= 0)
+            if (player.lives <= 0)
             {
                 // player is dead
                 //let reveal = SKTransition.flipHorizontal(withDuration: 0.5)

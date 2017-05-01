@@ -8,15 +8,21 @@
 
 import UIKit
 
-class HighscoreNameViewController: UIViewController {
+class HighscoreNameViewController: UIViewController
+{
     
     var highscore: Int = 0
     var manager: GameManagerViewController!
     
     @IBOutlet weak var highscoreLabel: UILabel!
-
-    @IBAction func submitButtonAction(_ sender: Any) {
-        // TODO: do network things here
+    @IBOutlet weak var nameField: UITextField!
+    
+    @IBAction func submitButtonAction(_ sender: Any)
+    {
+        if let url = URL(string: "http://127.0.0.1:8081/score/\(nameField.text!)/\(highscore)")
+        {
+            _ = getHighscores(url: url)
+        }
         
         manager.startGame()
         
@@ -24,14 +30,16 @@ class HighscoreNameViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
 
         self.view.backgroundColor = UIColor.black
         
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }

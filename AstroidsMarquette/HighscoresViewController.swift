@@ -8,6 +8,48 @@
 
 import UIKit
 
+func getHighscores(url: URL) -> String
+{
+    var newStr : String = "default"
+    
+    let task = URLSession.shared.dataTask(with: url)
+    {
+        (data, response, error) in
+        if let d = data
+        {
+            if let str = String(data: d, encoding: String.Encoding.utf8)
+            {
+                newStr = str
+            }
+        }
+    }
+    
+    task.resume()
+    
+    while (newStr == "default")
+    {
+        // wait until get something back
+    }
+    
+    let scores = newStr.components(separatedBy: "\n")
+    var index : Int = 1
+    newStr = ""
+    
+    for scoreEntry in scores
+    {
+        let score = scoreEntry.components(separatedBy: ",")
+        if (score.count < 2)
+        {
+            break
+        }
+        newStr = newStr + "\n\(index): \(score[0]) \(score[1])"
+        index += 1
+    }
+    
+    return newStr
+}
+
+
 class HighscoresViewController: UIViewController
 {
 
@@ -33,55 +75,5 @@ class HighscoresViewController: UIViewController
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    func getHighscores(url: URL) -> String
-    {
-        var newStr : String = "default"
-        
-        let task = URLSession.shared.dataTask(with: url)
-        {
-            (data, response, error) in
-            if let d = data
-            {
-                if let str = String(data: d, encoding: String.Encoding.utf8)
-                {
-                    newStr = str
-                }
-            }
-        }
-        
-        task.resume()
-        
-        while (newStr == "default")
-        {
-            // wait until get something back
-        }
-        
-        let scores = newStr.components(separatedBy: "\n")
-        var index : Int = 1
-        newStr = ""
-        
-        for scoreEntry in scores
-        {
-            let score = scoreEntry.components(separatedBy: ",")
-            if (score.count < 2)
-            {
-                break
-            }
-            newStr = newStr + "\n\(index): \(score[0]) \(score[1])"
-            index += 1
-        }
-        
-        return newStr
-    }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

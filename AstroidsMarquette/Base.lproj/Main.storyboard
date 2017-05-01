@@ -200,6 +200,7 @@
                     </view>
                     <connections>
                         <outlet property="highscoreLabel" destination="Agq-TM-HBp" id="I5l-9T-9F5"/>
+                        <outlet property="nameField" destination="HL1-0q-FGN" id="iaN-3v-4D4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i7X-O0-hyG" userLabel="First Responder" sceneMemberID="firstResponder"/>

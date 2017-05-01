@@ -8,14 +8,16 @@
 
 import UIKit
 
-class GameManagerViewController: UIViewController {
+class GameManagerViewController: UIViewController
+{
     
     var direction: Direction = Direction.NONE
     var fire     : Bool = false
     
     var gameViewController: GameViewController!
     
-    func playerEnded(score: Int) {
+    func playerEnded(score: Int)
+    {
         print("Score: \(score)")
         
         let highscoreController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Highscore Name")
@@ -24,7 +26,8 @@ class GameManagerViewController: UIViewController {
         self.present(highscoreController, animated: true, completion: nil)
     }
     
-    func startGame() {
+    func startGame()
+    {
         gameViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
         gameViewController.manager = self
         //self.present(gameViewController, animated: true, completion: nil)
@@ -33,13 +36,15 @@ class GameManagerViewController: UIViewController {
         appDelegate.window?.rootViewController = gameViewController
     }
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
         startGame()
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
