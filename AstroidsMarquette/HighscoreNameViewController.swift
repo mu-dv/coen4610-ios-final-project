@@ -24,12 +24,21 @@ class HighscoreNameViewController: UIViewController
             _ = getHighscores(url: url)
         }
         
+        let alert = UIAlertController( title: "Submit Score", message: "Score Saved!", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction( title: "Exit", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func playAgain(_ sender: Any) {
         manager.startGame()
         
         // dismiss viewcontroller
         dismiss(animated: true, completion: nil)
     }
-    
+
+    @IBAction func exitApp(_ sender: Any) {
+        UIControl().sendAction(#selector(URLSessionTask.suspend), to: UIApplication.shared, for: nil)
+    }
     override func viewDidLoad()
     {
         super.viewDidLoad()
