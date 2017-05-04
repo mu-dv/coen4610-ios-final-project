@@ -37,7 +37,8 @@ class HighscoreNameViewController: UIViewController
     }
 
     @IBAction func exitApp(_ sender: Any) {
-        UIControl().sendAction(#selector(URLSessionTask.suspend), to: UIApplication.shared, for: nil)
+        exit(0)
+//        UIControl().sendAction(#selector(URLSessionTask.suspend), to: UIApplication.shared, for: nil)
     }
     override func viewDidLoad()
     {

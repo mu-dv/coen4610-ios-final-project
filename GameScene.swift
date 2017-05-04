@@ -110,7 +110,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate
    
     override func didMove(to view: SKView)
     {
-        self.backgroundColor = SKColor.white
+       // self.backgroundColor = SKColor.white
         let back = SKSpriteNode(imageNamed: "background")
         
         self.addChild(back)
@@ -153,7 +153,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate
             // Initialize Score label
             curScoreLabel.text = "Lives: 0 Score: 0"
             curScoreLabel.fontSize = 20
-            curScoreLabel.fontColor = SKColor.black
+            curScoreLabel.fontColor = SKColor.white
             curScoreLabel.position = CGPoint(x: size.width/2, y: size.height*0.96)
             self.addChild(curScoreLabel)
             
