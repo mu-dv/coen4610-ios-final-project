@@ -16,7 +16,6 @@
 		D93C116E1E944710002C8556 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93C116D1E944710002C8556 /* AboutViewController.swift */; };
 		D99259861EB68B7400FDA280 /* HighscoreNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99259851EB68B7400FDA280 /* HighscoreNameViewController.swift */; };
 		D9AEE36B1EB2A73200826964 /* Alien.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AEE3661EB2A73200826964 /* Alien.swift */; };
-		D9AEE36C1EB2A73200826964 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AEE3671EB2A73200826964 /* GameOverScene.swift */; };
 		D9AEE36D1EB2A73200826964 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AEE3681EB2A73200826964 /* GameScene.swift */; };
 		D9AEE36E1EB2A73200826964 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AEE3691EB2A73200826964 /* GameViewController.swift */; };
 		D9AEE36F1EB2A73200826964 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AEE36A1EB2A73200826964 /* Player.swift */; };
@@ -44,7 +43,6 @@
 		D93C116D1E944710002C8556 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		D99259851EB68B7400FDA280 /* HighscoreNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighscoreNameViewController.swift; sourceTree = "<group>"; };
 		D9AEE3661EB2A73200826964 /* Alien.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alien.swift; path = ../Alien.swift; sourceTree = "<group>"; };
-		D9AEE3671EB2A73200826964 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameOverScene.swift; path = ../GameOverScene.swift; sourceTree = "<group>"; };
 		D9AEE3681EB2A73200826964 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameScene.swift; path = ../GameScene.swift; sourceTree = "<group>"; };
 		D9AEE3691EB2A73200826964 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = ../GameViewController.swift; sourceTree = "<group>"; };
 		D9AEE36A1EB2A73200826964 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = ../Player.swift; sourceTree = "<group>"; };
@@ -91,7 +89,6 @@
 			isa = PBXGroup;
 			children = (
 				D9AEE3661EB2A73200826964 /* Alien.swift */,
-				D9AEE3671EB2A73200826964 /* GameOverScene.swift */,
 				D9AEE3681EB2A73200826964 /* GameScene.swift */,
 				D9AEE3691EB2A73200826964 /* GameViewController.swift */,
 				D93401A91EB69733002C28E2 /* GameManagerViewController.swift */,
@@ -209,7 +206,6 @@
 				D9AEE36F1EB2A73200826964 /* Player.swift in Sources */,
 				D9AEE36E1EB2A73200826964 /* GameViewController.swift in Sources */,
 				D9FD92271EAFF80700C4CB0E /* MainMenuViewController.swift in Sources */,
-				D9AEE36C1EB2A73200826964 /* GameOverScene.swift in Sources */,
 				D99259861EB68B7400FDA280 /* HighscoreNameViewController.swift in Sources */,
 				D9AEE36D1EB2A73200826964 /* GameScene.swift in Sources */,
 				D93C116E1E944710002C8556 /* AboutViewController.swift in Sources */,
